@@ -1,3 +1,7 @@
+"use client"
+
+import { Navbar } from "@/components/navbar"
+
 import "./globals.css"
 
 import type { Metadata } from "next"
@@ -43,7 +47,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+      </body>
     </html>
   )
 }
