@@ -1,9 +1,22 @@
 "use client"
 
-export function H4({ children }: { children: React.ReactNode }) {
+import { cn } from "@/lib/utils"
+
+export function H4({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
-    <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+    <h4
+      className={cn(
+        "scroll-m-20 text-xl font-semibold tracking-tight",
+        className
+      )}
+    >
       {children}
-    </h3>
+    </h4>
   )
 }

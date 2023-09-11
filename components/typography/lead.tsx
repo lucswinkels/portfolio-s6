@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 
-export function P({
+export function Lead({
   children,
   className,
 }: {
@@ -10,8 +10,6 @@ export function P({
   className?: string
 }) {
   return (
-    <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
-      {children}
-    </p>
+    <p className={cn("text-xl text-muted-foreground", className)}>{children}</p>
   )
 }
