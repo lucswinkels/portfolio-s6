@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
+import Container from "@/components/container"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <Container>
       <Button>Button</Button>
-    </main>
+    </Container>
   )
 }
