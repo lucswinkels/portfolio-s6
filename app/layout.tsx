@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     shortcut: `${domain}/img/logo/png/ls-logo-black.png`,
     apple: `${domain}/apple-touch-icon.png`,
   },
+  manifest: `${domain}/manifest.json`,
 }
 
 export default function RootLayout({
