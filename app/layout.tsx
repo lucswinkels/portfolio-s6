@@ -1,6 +1,7 @@
 "use client"
 
 import { Navbar } from "@/components/navbar"
+import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
 
@@ -49,8 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -9,8 +9,8 @@ export function Logo() {
       <Image
         src="/logo/png/logo-ls-black.png"
         alt="Logo"
-        width={40}
-        height={40}
+        width={36}
+        height={36}
         priority
       />
     </Link>
