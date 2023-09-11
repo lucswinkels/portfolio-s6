@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 
 import Container from "@/components/container"
+import { ProjectCard } from "@/components/project-card"
 import { H1 } from "@/components/typography/h1"
 import { H2 } from "@/components/typography/h2"
 import { H3 } from "@/components/typography/h3"
@@ -23,6 +24,7 @@ export default function Home() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias!
       </Lead>
       <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias!</P>
+      <ProjectCard />
     </Container>
   )
 }
