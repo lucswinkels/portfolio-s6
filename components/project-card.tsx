@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
+import { ChevronRight } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -12,26 +12,40 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-type CardProps = React.ComponentProps<typeof Card>
+type ProjectCardProps = {
+  slug: string
+  title: string
+  img: string
+  description: string
+  className?: string
+}
 
-export function ProjectCard({ className, ...props }: CardProps) {
+export function ProjectCard({ className, ...props }: ProjectCardProps) {
   return (
-    <Link href="/">
-      <Card className={cn("w-[380px]", className)} {...props}>
-        <CardHeader>
-          <CardTitle>Project Name</CardTitle>
-          <CardDescription>Lorem ipsum dolor sit.</CardDescription>
-        </CardHeader>
-        <CardContent>
+    <Card className={className} {...props}>
+      <CardHeader>
+        <CardTitle>{props.title}</CardTitle>
+        <CardDescription>{props.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Link href={props.slug}>
           <Image
-            src="/logo/banner.png"
-            alt="test"
-            width={500}
-            height={500}
-            className="rounded-md"
+            src={props.img}
+            alt={props.title}
+            className="rounded-lg border shadow-sm"
+            width={1920}
+            height={1080}
           />
-        </CardContent>
-      </Card>
-    </Link>
+        </Link>
+      </CardContent>
+      <CardFooter>
+        <Link href={props.slug}>
+          <Button variant="outline">
+            View project
+            <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
+      </CardFooter>
+    </Card>
   )
 }
