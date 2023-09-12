@@ -6,7 +6,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import FadeUp from "@/components/animation/fade-up";
 import BackToTop from "@/components/back-to-top";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,7 +54,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <Navbar />
-          <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+          <FadeUp>
+            <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+          </FadeUp>
+          <Footer />
           <BackToTop />
         </ThemeProvider>
       </body>

@@ -16,61 +16,20 @@ import {
 
 import Container from "./container";
 import { Logo } from "./logo";
-import { ModeToggle } from "./mode-toggle";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Individual Project",
-    href: "/individual-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    title: "International Project",
-    href: "/international-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    title: "Group Project",
-    href: "/group-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-];
-
-export function Navbar() {
+export function Footer() {
   return (
-    <Container className="border-b">
+    <Container className="border-t">
       <div className="w-full items-center justify-between flex py-6 lg:py-8">
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuItem className="hidden md:block">
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/learning-outcomes" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Learning Outcomes
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <ModeToggle />
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
