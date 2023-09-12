@@ -16,6 +16,7 @@ type ProjectCardProps = {
   slug: string;
   title: string;
   img: string;
+  href: string;
   description: string;
   className?: string;
 };
@@ -24,7 +25,7 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
   return (
     <Card className={className} {...props}>
       <CardHeader>
-        <Link href={props.slug}>
+        <Link href={props.href}>
           <Image
             src={props.img}
             alt={props.title}
@@ -39,7 +40,7 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
         <CardDescription>{props.description}</CardDescription>
       </CardContent>
       <CardFooter>
-        <Link href={props.slug}>
+        <Link href={props.href}>
           <Button variant="outline">
             View project
             <ChevronRight className="ml-2 h-4 w-4" />
