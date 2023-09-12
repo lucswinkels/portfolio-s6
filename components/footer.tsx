@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { projects } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -17,40 +16,20 @@ import {
 
 import Container from "./container";
 import { Logo } from "./logo";
-import { ModeToggle } from "./mode-toggle";
 
-export function Navbar() {
+export function Footer() {
   return (
-    <Container className="border-b">
-      <div className="w-full items-center justify-between flex py-6">
+    <Container className="border-t">
+      <div className="w-full items-center justify-between flex py-6 lg:py-8">
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuItem className="hidden md:block">
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-max gap-3 p-4">
-                  {projects.map((component) => (
-                    <ListItem
-                      key={component.slug}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/learning-outcomes" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Learning Outcomes
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <ModeToggle />
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
