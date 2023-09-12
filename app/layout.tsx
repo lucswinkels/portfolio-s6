@@ -8,11 +8,11 @@ import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const domain = "https://dev-portfolio-s6.vercel.app"
+const domain = "https://semester6.lucswinkels.com"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Portfolio S6",
+    template: "%s // Portfolio S6",
     default: "Portfolio S6",
   },
   description: "My portfolio for semester 6 of advanced media design at FHICT.",
