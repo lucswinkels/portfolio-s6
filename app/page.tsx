@@ -1,12 +1,12 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import Container from "@/components/container"
-import { ProjectCard } from "@/components/project-card"
-import { H1 } from "@/components/typography/h1"
+import Container from "@/components/container";
+import { ProjectCard } from "@/components/project-card";
+import { H1 } from "@/components/typography/h1";
 
 export const metadata: Metadata = {
   title: "Home // Portfolio S6",
-}
+};
 
 const projects = [
   {
@@ -30,7 +30,7 @@ const projects = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     img: "/logo/banner.png",
   },
-]
+];
 
 export default function Home() {
   return (
@@ -46,7 +46,25 @@ export default function Home() {
             description={project.description}
           />
         ))}
+        {projects.map((project, i) => (
+          <ProjectCard
+            key={i}
+            title={project.title}
+            slug={project.slug}
+            img={project.img}
+            description={project.description}
+          />
+        ))}
+        {projects.map((project, i) => (
+          <ProjectCard
+            key={i}
+            title={project.title}
+            slug={project.slug}
+            img={project.img}
+            description={project.description}
+          />
+        ))}
       </div>
     </Container>
-  )
+  );
 }

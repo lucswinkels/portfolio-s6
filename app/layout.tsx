@@ -1,14 +1,16 @@
-import { Navbar } from "@/components/navbar"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Navbar } from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
-import "./globals.css"
+import "./globals.css";
 
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] })
+import BackToTop from "@/components/back-to-top";
 
-const domain = "https://semester6.lucswinkels.com"
+const inter = Inter({ subsets: ["latin"] });
+
+const domain = "https://semester6.lucswinkels.com";
 
 export const metadata: Metadata = {
   title: {
@@ -38,12 +40,12 @@ export const metadata: Metadata = {
     apple: `${domain}/apple-touch-icon.png`,
   },
   manifest: `${domain}/manifest.json`,
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -51,8 +53,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <Navbar />
           <div className="py-[10vh] xl:py-[15vh]">{children}</div>
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

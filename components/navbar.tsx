@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,11 +12,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
-import Container from "./container"
-import { Logo } from "./logo"
-import { ModeToggle } from "./mode-toggle"
+import Container from "./container";
+import { Logo } from "./logo";
+import { ModeToggle } from "./mode-toggle";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -37,12 +37,12 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   },
-]
+];
 
 export function Navbar() {
   return (
-    <Container>
-      <div className="w-full items-center justify-between flex py-8 xl:py-12">
+    <Container className="border-b">
+      <div className="w-full items-center justify-between flex py-6 lg:py-8">
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
@@ -76,7 +76,7 @@ export function Navbar() {
         </NavigationMenu>
       </div>
     </Container>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -101,6 +101,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

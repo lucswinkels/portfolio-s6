@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-import FadeUp from "./animation/fadeUp"
+import FadeUp from "./animation/fade-up";
 
 export default function Container({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <FadeUp>
@@ -22,5 +22,5 @@ export default function Container({
         {children}
       </div>
     </FadeUp>
-  )
+  );
 }
