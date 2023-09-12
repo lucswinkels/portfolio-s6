@@ -57,7 +57,7 @@ export default function RootLayout({
           <FadeUp>
             <div className="py-[10vh] xl:py-[15vh]">{children}</div>
           </FadeUp>
-          <Footer />
+          {/* <Footer /> */}
           <BackToTop />
         </ThemeProvider>
       </body>
