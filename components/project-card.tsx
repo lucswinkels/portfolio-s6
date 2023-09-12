@@ -35,7 +35,7 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
         </Link>
       </CardHeader>
       <CardContent>
-        <CardTitle>{props.title}</CardTitle>
+        <CardTitle className="mb-1">{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
       </CardContent>
       <CardFooter>

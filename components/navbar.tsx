@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
+import { projects } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -18,41 +19,20 @@ import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Individual Project",
-    href: "/individual-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    title: "International Project",
-    href: "/international-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-  {
-    title: "Group Project",
-    href: "/group-project",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  },
-];
-
 export function Navbar() {
   return (
     <Container className="border-b">
-      <div className="w-full items-center justify-between flex py-6 lg:py-8">
+      <div className="w-full items-center justify-between flex py-6">
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem className="hidden md:block">
               <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4">
-                  {components.map((component) => (
+                <ul className="grid w-max gap-3 p-4">
+                  {projects.map((component) => (
                     <ListItem
-                      key={component.title}
+                      key={component.slug}
                       title={component.title}
                       href={component.href}
                     >
