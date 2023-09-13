@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
+import { Product } from "@/lib/types/Product";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,19 +15,9 @@ import {
 
 import { Badge } from "./ui/badge";
 
-type ProjectCardProps = {
-  slug: string;
-  title: string;
-  img: string;
-  href: string;
-  description: string;
-  categories?: string[];
-  className?: string;
-};
-
-export function ProjectCard({ className, ...props }: ProjectCardProps) {
+export function ProductCard({ ...props }: Product) {
   return (
-    <Card className={className} {...props}>
+    <Card {...props}>
       <CardHeader>
         <Link href={props.href}>
           <Image
@@ -39,15 +30,13 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
         </Link>
       </CardHeader>
       <CardContent>
-        {props.categories && (
-          <div className="flex gap-2 mb-6">
-            {props.categories.map((category, i) => (
-              <Badge key={i} variant="secondary" className="capitalize">
-                {category}
-              </Badge>
-            ))}
-          </div>
-        )}
+        <div className="flex gap-2 mb-6">
+          {props.categories.map((category, i) => (
+            <Badge key={i} variant="secondary" className="capitalize">
+              {category}
+            </Badge>
+          ))}
+        </div>
         <CardTitle className="mb-1">{props.title}</CardTitle>
         <CardDescription className="line-clamp-2">
           {props.description}
