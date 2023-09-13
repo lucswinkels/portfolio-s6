@@ -60,6 +60,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         className="rounded-lg border shadow-sm"
         width={1920}
         height={1080}
+        priority
       />
     </>
   );
