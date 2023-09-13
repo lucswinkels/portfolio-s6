@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { products } from "@/lib/products";
 import { cn } from "@/lib/utils";
@@ -20,7 +21,7 @@ export function ProductGrid({ className }: { className?: string }) {
   return (
     <>
       <Select value={selectedProject} onValueChange={setSelectedProject}>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="min-w-[200px] w-max">
           <SelectValue placeholder="All Projects" />
         </SelectTrigger>
         <SelectContent>
@@ -42,22 +43,9 @@ export function ProductGrid({ className }: { className?: string }) {
           className
         )}
       >
-        {selectedProject === "all-projects"
-          ? products.map((product, i) => (
-              <ProductCard
-                key={i}
-                project={product.project}
-                title={product.title}
-                slug={product.slug}
-                img={product.img}
-                description={product.description}
-                categories={product.categories}
-                href={product.href}
-              />
-            ))
-          : products
-              .filter((product) => product.project.slug === selectedProject)
-              .map((product, i) => (
+        <AnimatePresence>
+          {selectedProject === "all-projects"
+            ? products.map((product, i) => (
                 <ProductCard
                   key={i}
                   project={product.project}
@@ -68,7 +56,22 @@ export function ProductGrid({ className }: { className?: string }) {
                   categories={product.categories}
                   href={product.href}
                 />
-              ))}
+              ))
+            : products
+                .filter((product) => product.project.slug === selectedProject)
+                .map((product, i) => (
+                  <ProductCard
+                    key={i}
+                    project={product.project}
+                    title={product.title}
+                    slug={product.slug}
+                    img={product.img}
+                    description={product.description}
+                    categories={product.categories}
+                    href={product.href}
+                  />
+                ))}
+        </AnimatePresence>
       </div>
     </>
   );
