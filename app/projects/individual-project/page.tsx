@@ -5,6 +5,7 @@ import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectGrid } from "@/components/project-grid";
+import { H1 } from "@/components/typography/h1";
 import { H2 } from "@/components/typography/h2";
 import { P } from "@/components/typography/p";
 
@@ -20,9 +21,9 @@ export default function IndividualProject() {
   return (
     <Container>
       <FadeUp>
-        <H2>Individual Project</H2>
+        <H1>Individual Project</H1>
         {currentProject && currentProject.products ? (
-          <ProjectGrid className="mt-6">
+          <ProjectGrid>
             {currentProject.products.map((product, i) => (
               <ProjectCard
                 key={i}

@@ -49,7 +49,9 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
           </div>
         )}
         <CardTitle className="mb-1">{props.title}</CardTitle>
-        <CardDescription>{props.description}</CardDescription>
+        <CardDescription className="line-clamp-2">
+          {props.description}
+        </CardDescription>
       </CardContent>
       <CardFooter>
         <Link href={props.href}>
