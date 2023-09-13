@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 
+import { projects } from "@/lib/projects";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
-import { H2 } from "@/components/typography/h2";
+import { ProjectCard } from "@/components/project-card";
+import { ProjectGrid } from "@/components/project-grid";
+import { H1 } from "@/components/typography/h1";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
@@ -10,11 +13,31 @@ export const metadata: Metadata = {
 };
 
 export default function GroupProject() {
+  const currentProject = projects.find(
+    (project) => project.slug === "group-project"
+  );
+
   return (
     <Container>
       <FadeUp>
-        <H2>Group Project</H2>
-        <P>Coming soon.</P>
+        <H1>Group Project</H1>
+        {currentProject && currentProject.products ? (
+          <ProjectGrid>
+            {currentProject.products.map((product, i) => (
+              <ProjectCard
+                key={i}
+                title={product.title}
+                slug={product.slug}
+                img={product.img}
+                description={product.description}
+                href={product.href}
+                categories={product.categories}
+              />
+            ))}
+          </ProjectGrid>
+        ) : (
+          <P>No products found for this project.</P>
+        )}
       </FadeUp>
     </Container>
   );

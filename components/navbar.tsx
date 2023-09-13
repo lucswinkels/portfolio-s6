@@ -21,7 +21,7 @@ import { ModeToggle } from "./mode-toggle";
 
 export function Navbar() {
   return (
-    <Container className="border-b">
+    <Container className="border-b fixed top-0 left-0 z-20 bg-background">
       <div className="w-full items-center justify-between flex py-6">
         <Logo />
         <NavigationMenu>

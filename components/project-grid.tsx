@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-export function P({
+export function ProjectGrid({
   children,
   className,
 }: {
@@ -10,13 +10,13 @@ export function P({
   className?: string;
 }) {
   return (
-    <p
+    <div
       className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 max-w-[600px]",
+        "grid xl:grid-cols-3 md:grid-cols-2 gap-8 xl:mt-12 mt-6",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 }

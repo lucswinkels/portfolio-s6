@@ -53,7 +53,31 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-w-full;
   }
+
+  body::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border-radius: 16px;
+    border: 8px solid transparent;
+    @apply bg-foreground;
+  }
+
+  body::-webkit-scrollbar-track {
+    width: 4px;
+    background-clip: padding-box;
+    border-radius: 16px;
+    background-color: transparent;
+    border: 8px solid transparent;
+  }
+}
+
+html {
+  overflow-y: scroll;
 }
