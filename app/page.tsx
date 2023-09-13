@@ -1,10 +1,9 @@
+import * as React from "react";
 import { Metadata } from "next";
 
-import { projects } from "@/lib/projects";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
-import { ProjectCard } from "@/components/project-card";
-import { ProjectGrid } from "@/components/project-grid";
+import { ProductGrid } from "@/components/product-grid";
 import { H1 } from "@/components/typography/h1";
 
 export const metadata: Metadata = {
@@ -16,18 +15,9 @@ export default function Home() {
     <Container>
       <FadeUp>
         <H1>Portfolio</H1>
-        <ProjectGrid>
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={i}
-              title={project.title}
-              slug={project.slug}
-              img={project.img}
-              description={project.description}
-              href={project.href}
-            />
-          ))}
-        </ProjectGrid>
+        <div className="mt-6 xl:mt-12">
+          <ProductGrid />
+        </div>
       </FadeUp>
     </Container>
   );

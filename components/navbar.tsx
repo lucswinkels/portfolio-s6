@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { projects } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -26,7 +25,7 @@ export function Navbar() {
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuItem className="hidden md:block">
+            {/* <NavigationMenuItem className="hidden md:block">
               <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-max gap-3 p-4">
@@ -48,7 +47,7 @@ export function Navbar() {
                   Learning Outcomes
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <ModeToggle />
             </NavigationMenuItem>

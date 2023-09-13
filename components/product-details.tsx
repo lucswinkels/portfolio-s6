@@ -16,17 +16,18 @@ export default function ProductDetails({ product }: { product: Product }) {
       <div className="grid xl:grid-cols-3 gap-8 xl:gap-2 mb-8 xl:mb-12">
         <div className="xl:col-span-2 w-full">
           <H1>{product.title}</H1>
-          <div className="flex gap-2 mt-2 lg:mt-6">
+          <P>{product.description}</P>
+          <div className="flex gap-2 mt-6 flex-wrap">
+            <Badge>{product.project.title}</Badge>
             {product.categories.map((category, i) => (
               <Badge key={i} variant="secondary" className="capitalize">
                 {category}
               </Badge>
             ))}
           </div>
-          <P>{product.description}</P>
         </div>
         {product.data && (
-          <Card className="flex flex-col gap-8 p-8 md:w-max xl:ml-auto w-full">
+          <Card className="flex flex-col gap-8 p-6 lg:p-8 md:w-max xl:ml-auto w-full">
             {product.data.learningOutcomes && (
               <div>
                 <H4>Learning Outcomes</H4>
