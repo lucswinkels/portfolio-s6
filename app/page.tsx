@@ -4,7 +4,7 @@ import { projects } from "@/lib/projects";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
-import { H1 } from "@/components/typography/h1";
+import { ProjectGrid } from "@/components/project-grid";
 import { H2 } from "@/components/typography/h2";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function Home() {
     <Container>
       <FadeUp>
         <H2>Portfolio</H2>
-        <div className="mt-6 grid xl:grid-cols-3 md:grid-cols-2 gap-8">
+        <ProjectGrid className="mt-6">
           {projects.map((project, i) => (
             <ProjectCard
               key={i}
@@ -27,7 +27,7 @@ export default function Home() {
               href={project.href}
             />
           ))}
-        </div>
+        </ProjectGrid>
       </FadeUp>
     </Container>
   );
