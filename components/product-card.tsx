@@ -28,15 +28,13 @@ export function ProductCard({ ...props }: Product) {
     >
       <Card {...props}>
         <CardHeader>
-          <Link href={props.href}>
-            <Image
-              src={props.img}
-              alt={props.title}
-              className="rounded-lg border shadow-sm"
-              width={1920}
-              height={1080}
-            />
-          </Link>
+          <Image
+            src={props.img}
+            alt={props.title}
+            className="rounded-lg border shadow-sm"
+            width={1920}
+            height={1080}
+          />
         </CardHeader>
         <CardContent>
           <div className="flex gap-2 mb-6 flex-wrap">
