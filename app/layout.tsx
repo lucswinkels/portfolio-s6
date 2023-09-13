@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" enableSystem>
           <Navbar />
           <div className="py-[10vh] xl:py-[15vh]">{children}</div>
           {/* <Footer /> */}
