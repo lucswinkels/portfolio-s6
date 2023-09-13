@@ -12,12 +12,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { Badge } from "./ui/badge";
+
 type ProjectCardProps = {
   slug: string;
   title: string;
   img: string;
   href: string;
   description: string;
+  categories?: string[];
   className?: string;
 };
 
@@ -36,6 +39,15 @@ export function ProjectCard({ className, ...props }: ProjectCardProps) {
         </Link>
       </CardHeader>
       <CardContent>
+        {props.categories && (
+          <div className="flex gap-2 mb-6">
+            {props.categories.map((category, i) => (
+              <Badge key={i} variant="secondary" className="capitalize">
+                {category}
+              </Badge>
+            ))}
+          </div>
+        )}
         <CardTitle className="mb-1">{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
       </CardContent>
