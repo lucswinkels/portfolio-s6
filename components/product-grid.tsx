@@ -69,7 +69,7 @@ export function ProductGrid({ className }: { className?: string }) {
   });
   return (
     <>
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-wrap">
         <Select value={selectedProject} onValueChange={setSelectedProject}>
           <SelectTrigger className="min-w-[200px] w-max">
             <SelectValue placeholder="All projects" />
@@ -129,33 +129,6 @@ export function ProductGrid({ className }: { className?: string }) {
           ) : (
             <P>No products found.</P>
           )}
-          {/* {selectedProject === "all-projects"
-            ? products.map((product, i) => (
-                <ProductCard
-                  key={i}
-                  project={product.project}
-                  title={product.title}
-                  slug={product.slug}
-                  img={product.img}
-                  description={product.description}
-                  categories={product.categories}
-                  href={product.href}
-                />
-              ))
-            : products
-                .filter((product) => product.project.slug === selectedProject)
-                .map((product, i) => (
-                  <ProductCard
-                    key={i}
-                    project={product.project}
-                    title={product.title}
-                    slug={product.slug}
-                    img={product.img}
-                    description={product.description}
-                    categories={product.categories}
-                    href={product.href}
-                  />
-                ))} */}
         </AnimatePresence>
       </div>
     </>

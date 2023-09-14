@@ -71,6 +71,10 @@ export const products = [
           title: "User interaction (execution & validation)",
           slug: "user-interaction-execution",
         },
+        {
+          title: "Goal-oriented interaction",
+          slug: "goal-oriented-interaction",
+        },
       ],
       researchMethods: [
         { category: "library", method: "Trend analysis" },
