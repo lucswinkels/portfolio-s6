@@ -10,7 +10,7 @@ export type Product = {
   img: string;
   categories: string[];
   data?: {
-    learningOutcomes?: string[];
+    learningOutcomes?: { title: string; slug: string }[];
     researchMethods?: { category: string; method: string }[];
   };
 };

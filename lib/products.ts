@@ -2,7 +2,7 @@ export const products = [
   {
     project: {
       slug: "individual-project",
-      title: "Individual Project",
+      title: "Individual project",
     },
     slug: "product-name-1",
     href: "/projects/individual-project/product-name-1",
@@ -12,7 +12,16 @@ export const products = [
     img: "/logo/banner.png",
     categories: ["research", "design"],
     data: {
-      learningOutcomes: ["1: User interaction"],
+      learningOutcomes: [
+        {
+          title: "User interaction (execution & validation)",
+          slug: "user-interaction-execution",
+        },
+        {
+          title: "User interaction (analysis & advice)",
+          slug: "user-interaction-analysis",
+        },
+      ],
       researchMethods: [
         { category: "library", method: "Trend analysis" },
         { category: "library", method: "Literature study" },
@@ -22,7 +31,7 @@ export const products = [
   {
     project: {
       slug: "individual-project",
-      title: "Individual Project",
+      title: "Individual project",
     },
     slug: "product-name-2",
     href: "/projects/individual-project/product-name-2",
@@ -32,7 +41,12 @@ export const products = [
     img: "/logo/banner.png",
     categories: ["research", "design"],
     data: {
-      learningOutcomes: ["1: User interaction"],
+      learningOutcomes: [
+        {
+          title: "User interaction (analysis & advice)",
+          slug: "user-interaction-analysis",
+        },
+      ],
       researchMethods: [
         { category: "library", method: "Trend analysis" },
         { category: "library", method: "Literature study" },
@@ -52,7 +66,12 @@ export const products = [
     img: "/logo/banner.png",
     categories: ["research", "design"],
     data: {
-      learningOutcomes: ["1: User interaction"],
+      learningOutcomes: [
+        {
+          title: "User interaction (execution & validation)",
+          slug: "user-interaction-execution",
+        },
+      ],
       researchMethods: [
         { category: "library", method: "Trend analysis" },
         { category: "library", method: "Literature study" },
@@ -72,7 +91,16 @@ export const products = [
     img: "/logo/banner.png",
     categories: ["research", "design"],
     data: {
-      learningOutcomes: ["1: User interaction"],
+      learningOutcomes: [
+        {
+          title: "User interaction (execution & validation)",
+          slug: "user-interaction-execution",
+        },
+        {
+          title: "Personal leadership",
+          slug: "personal-leadership",
+        },
+      ],
       researchMethods: [
         { category: "library", method: "Trend analysis" },
         { category: "library", method: "Literature study" },

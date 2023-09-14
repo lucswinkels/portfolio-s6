@@ -31,10 +31,10 @@ export default function ProductDetails({ product }: { product: Product }) {
             {product.data.learningOutcomes && (
               <div>
                 <H4>Learning Outcomes</H4>
-                <div className="flex gap-2 mt-2 flex-wrap">
+                <div className="flex flex-col gap-2 mt-2 flex-wrap">
                   {product.data.learningOutcomes.map((learningOutcome, i) => (
-                    <Badge key={i} variant="secondary">
-                      {learningOutcome}
+                    <Badge key={i} variant="secondary" className="w-max">
+                      {learningOutcome.title}
                     </Badge>
                   ))}
                 </div>
