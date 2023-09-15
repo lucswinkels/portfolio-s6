@@ -35,14 +35,14 @@ export function ProductCard({ ...props }: Product) {
           <Image
             src={props.img}
             alt={props.title}
-            className="rounded-lg border shadow-sm"
+            className="border-b rounded-t-lg"
             width={1920}
             height={1080}
           />
         </CardHeader>
         <CardContent>
           <div className="flex gap-2 mb-6 flex-wrap">
-            <Badge>{props.project.title}</Badge>
+            {/* <Badge>{props.project.title}</Badge> */}
             {props.categories.map((category, i) => (
               <Badge key={i} variant={category} className="capitalize">
                 {category}
