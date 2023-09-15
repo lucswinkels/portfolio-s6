@@ -4,9 +4,9 @@ export const products = [
       slug: "individual-project",
       title: "Individual project",
     },
-    slug: "product-name-1",
-    href: "/projects/individual-project/product-name-1",
-    title: "Product Name 1",
+    slug: "portfolio-ui-design",
+    href: "/projects/individual-project/portfolio-ui-design",
+    title: "Portfolio UI design",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
     img: "/logo/banner.png",
@@ -20,6 +20,32 @@ export const products = [
         {
           title: "User interaction (analysis & advice)",
           slug: "user-interaction-analysis",
+        },
+      ],
+      researchMethods: [
+        { category: "field", method: "Peer review" },
+        { category: "field", method: "A/B testing" },
+        { category: "field", method: "Usability testing" },
+      ],
+    },
+  },
+  {
+    project: {
+      slug: "individual-project",
+      title: "Individual project",
+    },
+    slug: "web-technologies-research",
+    href: "/projects/individual-project/web-technologies-research",
+    title: "Web technologies research",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+    img: "/logo/banner.png",
+    categories: ["research"],
+    data: {
+      learningOutcomes: [
+        {
+          title: "Investigative problem solving",
+          slug: "investigative-problem-solving",
         },
       ],
       researchMethods: [
@@ -33,18 +59,18 @@ export const products = [
       slug: "individual-project",
       title: "Individual project",
     },
-    slug: "product-name-2",
-    href: "/projects/individual-project/product-name-2",
-    title: "Product Name 2",
+    slug: "portfolio-content-research",
+    href: "/projects/individual-project/portfolio-content-research",
+    title: "Portfolio content research",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
     img: "/logo/banner.png",
-    categories: ["research", "design"],
+    categories: ["research"],
     data: {
       learningOutcomes: [
         {
-          title: "User interaction (analysis & advice)",
-          slug: "user-interaction-analysis",
+          title: "Investigative problem solving",
+          slug: "investigative-problem-solving",
         },
       ],
       researchMethods: [
@@ -55,59 +81,64 @@ export const products = [
   },
   {
     project: {
-      slug: "group-project",
-      title: "Group Project",
+      slug: "individual-project",
+      title: "Individual project",
     },
-    slug: "product-name-3",
-    href: "/projects/individual-project/product-name-3",
-    title: "Product Name 3",
+    slug: "portfolio-project-plan",
+    href: "/projects/individual-project/portfolio-project-plan",
+    title: "Portfolio project plan",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
     img: "/logo/banner.png",
-    categories: ["research", "design"],
+    categories: ["research"],
     data: {
       learningOutcomes: [
         {
-          title: "User interaction (execution & validation)",
-          slug: "user-interaction-execution",
+          title: "Future-oriented organisation",
+          slug: "future-oriented-organisation",
         },
-        {
-          title: "Goal-oriented interaction",
-          slug: "goal-oriented-interaction",
-        },
-      ],
-      researchMethods: [
-        { category: "library", method: "Trend analysis" },
-        { category: "library", method: "Literature study" },
       ],
     },
   },
   {
     project: {
-      slug: "international-project",
-      title: "International Project",
+      slug: "individual-project",
+      title: "Individual project",
     },
-    slug: "product-name-4",
-    href: "/projects/individual-project/product-name-3",
-    title: "Product Name 4",
+    slug: "portfolio-c4-model",
+    href: "/projects/individual-project/portfolio-c4-model",
+    title: "Portfolio C4 model",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
     img: "/logo/banner.png",
-    categories: ["research", "design"],
+    categories: ["design"],
     data: {
       learningOutcomes: [
         {
-          title: "User interaction (execution & validation)",
-          slug: "user-interaction-execution",
-        },
-        {
-          title: "Personal leadership",
-          slug: "personal-leadership",
+          title: "Software design and realisation",
+          slug: "software-design",
         },
       ],
-      researchMethods: [
-        { category: "library", method: "Trend analysis" },
-        { category: "library", method: "Literature study" },
+    },
+  },
+  {
+    project: {
+      slug: "individual-project",
+      title: "Individual project",
+    },
+    slug: "portfolio-development",
+    href: "/projects/individual-project/portfolio-development",
+    title: "Portfolio development",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+    img: "/logo/banner.png",
+    categories: ["development"],
+    data: {
+      learningOutcomes: [
+        {
+          title: "Software design and realisation",
+          slug: "software-design",
+        },
       ],
     },
   },
