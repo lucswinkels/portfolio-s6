@@ -33,7 +33,7 @@ export default function BackToTop() {
         visible ? "visible opacity-100" : "invisible opacity-0"
       } fixed lg:bottom-8 lg:right-8 bottom-4 right-4 transition-all duration-300 z-10`}
     >
-      <Button variant="outline" size="icon" className="h-12 w-12">
+      <Button size="icon" className="h-12 w-12">
         <MoveUp className="h-4 w-4" />
       </Button>
     </a>

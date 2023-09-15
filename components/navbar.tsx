@@ -19,35 +19,40 @@ import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 
 export function Navbar() {
+  const projects = [
+    {
+      title: "Individual project",
+      href: "/projects/individual-project",
+    },
+    {
+      title: "International project",
+      href: "/projects/international-project",
+    },
+    {
+      title: "Group project",
+      href: "/projects/group-project",
+    },
+  ];
   return (
     <Container className="border-b fixed top-0 left-0 z-20 bg-background">
       <div className="w-full items-center justify-between flex py-4 lg:py-6">
         <Logo />
         <NavigationMenu>
           <NavigationMenuList>
-            {/* <NavigationMenuItem className="hidden md:block">
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Reading guides</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-max gap-3 p-4">
-                  {projects.map((component) => (
+                  {projects.map((project, i) => (
                     <ListItem
-                      key={component.slug}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
+                      key={i}
+                      title={project.title}
+                      href={project.href}
+                    />
                   ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/learning-outcomes" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Learning Outcomes
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <ModeToggle />
             </NavigationMenuItem>
@@ -74,9 +79,6 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
         </a>
       </NavigationMenuLink>
     </li>

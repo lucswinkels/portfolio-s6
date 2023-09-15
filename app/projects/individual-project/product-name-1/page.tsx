@@ -17,7 +17,7 @@ export default function ProductNameOne() {
     (product) => product.slug === "product-name-1"
   );
 
-  const ProductContent = () => {
+  const Content = () => {
     return (
       <>
         <FadeUp>
@@ -75,7 +75,7 @@ export default function ProductNameOne() {
     <Container>
       <FadeUp>
         {currentProduct && <ProductDetails product={currentProduct} />}
-        <ProductContent />
+        <Content />
       </FadeUp>
     </Container>
   );
