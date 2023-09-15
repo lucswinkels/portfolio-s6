@@ -60,6 +60,8 @@
 
   body::-webkit-scrollbar {
     width: 20px;
+    border-left: 1px solid;
+    @apply border-border;
   }
 
   body::-webkit-scrollbar-thumb {
