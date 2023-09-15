@@ -9,12 +9,12 @@ import ProductDetails from "@/components/product-details";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
-  title: "Product Name 1",
+  title: "Portfolio C4 model",
 };
 
-export default function ProductNameOne() {
+export default function PortfolioC4Model() {
   const currentProduct = products.find(
-    (product) => product.slug === "product-name-1"
+    (product) => product.slug === "portfolio-c4-model"
   );
 
   const Content = () => {
