@@ -108,7 +108,7 @@ export function ProductGrid({ className }: { className?: string }) {
       </div>
       <div
         className={cn(
-          "grid xl:grid-cols-3 md:grid-cols-2 gap-8 mt-6",
+          "grid 2xl:grid-cols-3 md:grid-cols-2 gap-8 mt-6",
           className
         )}
       >
