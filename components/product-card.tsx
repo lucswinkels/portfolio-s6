@@ -40,7 +40,7 @@ export function ProductCard({ ...props }: Product) {
           <div className="flex gap-2 mb-6 flex-wrap">
             <Badge>{props.project.title}</Badge>
             {props.categories.map((category, i) => (
-              <Badge key={i} variant="secondary" className="capitalize">
+              <Badge key={i} variant={category} className="capitalize">
                 {category}
               </Badge>
             ))}

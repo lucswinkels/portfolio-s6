@@ -20,7 +20,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           <div className="flex gap-2 mt-6 flex-wrap">
             <Badge>{product.project.title}</Badge>
             {product.categories.map((category, i) => (
-              <Badge key={i} variant="secondary" className="capitalize">
+              <Badge key={i} variant={category} className="capitalize">
                 {category}
               </Badge>
             ))}
@@ -45,7 +45,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 <H4>Research Methods</H4>
                 <div className="flex gap-2 mt-2 flex-wrap">
                   {product.data.researchMethods.map((researchMethod, i) => (
-                    <Badge key={i} variant="secondary">
+                    <Badge key={i} variant={researchMethod.category}>
                       {researchMethod.method}
                     </Badge>
                   ))}
