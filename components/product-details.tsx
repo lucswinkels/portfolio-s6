@@ -13,7 +13,7 @@ import { Card } from "./ui/card";
 export default function ProductDetails({ product }: { product: Product }) {
   return (
     <>
-      <div className="grid xl:grid-cols-3 gap-8 xl:gap-2 mb-8 xl:mb-12">
+      <div className="grid xl:grid-cols-3 gap-8 xl:gap-2 mb-8 xl:mb-16">
         <div className="xl:col-span-2 w-full">
           <H1>{product.title}</H1>
           <P>{product.description}</P>
