@@ -30,7 +30,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           </div>
         </div>
         {product.data && (
-          <Card className="flex flex-col gap-8 p-6 lg:p-8 md:w-max 2xl:ml-auto w-full h-max">
+          <Card className="flex flex-col gap-8 p-0 shadow-none md:shadow-sm border-0 md:border md:p-6 lg:p-8 md:w-max 2xl:ml-auto w-full h-max">
             {product.data.learningOutcomes && (
               <div>
                 <H4>Learning Outcomes</H4>

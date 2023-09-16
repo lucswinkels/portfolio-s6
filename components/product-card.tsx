@@ -57,7 +57,7 @@ export function ProductCard({ ...props }: Product) {
         <CardFooter>
           <Link href={props.href}>
             <Button>
-              View project
+              View product
               <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
