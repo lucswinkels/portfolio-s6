@@ -33,11 +33,11 @@ export default function ProductDetails({ product }: { product: Product }) {
         priority
       />
       {product.data && (
-        <Card className="flex flex-col gap-8 p-0 shadow-none md:shadow-sm border-0 md:border md:p-6 lg:p-8 w-full">
+        <Card className="flex flex-col gap-8 p-4 md:p-6 lg:p-8 w-full">
           {product.data.learningOutcomes && (
             <div>
               <H4>Learning Outcomes</H4>
-              <div className="flex gap-2 mt-2 flex-wrap w-max">
+              <div className="flex gap-2 mt-2 flex-wrap">
                 {product.data.learningOutcomes.map((learningOutcome, i) => (
                   <Badge key={i} variant="secondary">
                     {learningOutcome.title}
@@ -49,7 +49,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           {product.data.researchMethods && (
             <div>
               <H4>Research Methods</H4>
-              <div className="flex gap-2 mt-2 flex-wrap w-max">
+              <div className="flex gap-2 mt-2 flex-wrap">
                 {product.data.researchMethods.map((researchMethod, i) => (
                   <Badge key={i} variant={researchMethod.category}>
                     {researchMethod.method}
