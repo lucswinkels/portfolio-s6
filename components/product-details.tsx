@@ -33,36 +33,32 @@ export default function ProductDetails({ product }: { product: Product }) {
         priority
       />
       {product.data && (
-        <div className="grid xl:grid-cols-2 gap-8">
+        <Card className="flex flex-col gap-8 p-0 shadow-none md:shadow-sm border-0 md:border md:p-6 lg:p-8 w-full">
           {product.data.learningOutcomes && (
-            <Card className="flex flex-col gap-8 p-0 shadow-none md:shadow-sm border-0 md:border md:p-6 lg:p-8 w-full">
-              <div>
-                <H4>Learning Outcomes</H4>
-                <div className="flex flex-col gap-2 mt-2 flex-wrap">
-                  {product.data.learningOutcomes.map((learningOutcome, i) => (
-                    <Badge key={i} variant="secondary" className="w-max">
-                      {learningOutcome.title}
-                    </Badge>
-                  ))}
-                </div>
+            <div>
+              <H4>Learning Outcomes</H4>
+              <div className="flex gap-2 mt-2 flex-wrap w-max">
+                {product.data.learningOutcomes.map((learningOutcome, i) => (
+                  <Badge key={i} variant="secondary">
+                    {learningOutcome.title}
+                  </Badge>
+                ))}
               </div>
-            </Card>
+            </div>
           )}
           {product.data.researchMethods && (
-            <Card className="flex flex-col gap-8 p-0 shadow-none md:shadow-sm border-0 md:border md:p-6 lg:p-8 w-full">
-              <div>
-                <H4>Research Methods</H4>
-                <div className="flex gap-2 mt-2 flex-wrap">
-                  {product.data.researchMethods.map((researchMethod, i) => (
-                    <Badge key={i} variant={researchMethod.category}>
-                      {researchMethod.method}
-                    </Badge>
-                  ))}
-                </div>
+            <div>
+              <H4>Research Methods</H4>
+              <div className="flex gap-2 mt-2 flex-wrap w-max">
+                {product.data.researchMethods.map((researchMethod, i) => (
+                  <Badge key={i} variant={researchMethod.category}>
+                    {researchMethod.method}
+                  </Badge>
+                ))}
               </div>
-            </Card>
+            </div>
           )}
-        </div>
+        </Card>
       )}
     </div>
   );

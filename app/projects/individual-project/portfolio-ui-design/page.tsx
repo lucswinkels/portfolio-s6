@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 import { products } from "@/lib/products";
-import { Button } from "@/components/ui/button";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import ContentSection from "@/components/content-section";
