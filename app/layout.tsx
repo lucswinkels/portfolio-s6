@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Script src="./maze.js" />
+        <Script src="/maze.js" />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
           <div className="py-[20vh] xl:py-[25vh]">{children}</div>
