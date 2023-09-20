@@ -5,6 +5,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 import BackToTop from "@/components/back-to-top";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Script src="./maze.js" />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
           <div className="py-[20vh] xl:py-[25vh]">{children}</div>
