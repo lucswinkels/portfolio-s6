@@ -23,9 +23,9 @@ export const products = [
         },
       ],
       researchMethods: [
-        { category: "field", method: "Peer review" },
-        { category: "field", method: "A/B testing" },
-        { category: "field", method: "Usability testing" },
+        { category: "showroom", method: "Peer review" },
+        { category: "lab", method: "A/B testing" },
+        { category: "lab", method: "Usability testing" },
       ],
     },
   },

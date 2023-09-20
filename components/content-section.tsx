@@ -16,7 +16,7 @@ export default function ContentSection({
 }) {
   return (
     <FadeUp>
-      <div className={cn("mt-8 lg:mt-16 xl:mt-32", className)}>
+      <div className={cn("", className)}>
         <H2>{title}</H2>
         {children}
       </div>
