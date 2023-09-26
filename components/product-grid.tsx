@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 
 import { products } from "@/lib/products";
@@ -118,16 +119,17 @@ export function ProductGrid({ className }: { className?: string }) {
         <AnimatePresence>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product, i) => (
-              <ProductCard
-                key={i}
-                project={product.project}
-                title={product.title}
-                slug={product.slug}
-                img={product.img}
-                description={product.description}
-                categories={product.categories}
-                href={product.href}
-              />
+              <Link href={product.href} key={i}>
+                <ProductCard
+                  project={product.project}
+                  title={product.title}
+                  slug={product.slug}
+                  img={product.img}
+                  description={product.description}
+                  categories={product.categories}
+                  href={product.href}
+                />
+              </Link>
             ))
           ) : (
             <P>No products found.</P>

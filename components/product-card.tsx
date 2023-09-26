@@ -30,41 +30,39 @@ export function ProductCard({ ...props }: Product) {
       exit="hidden"
       variants={FADE_UP_ANIMATION_VARIANTS}
     >
-      <Link href={props.href}>
-        <Card {...props}>
-          <CardHeader>
-            <Image
-              src={props.img}
-              alt={props.title}
-              className="border-b rounded-t-lg"
-              width={1920}
-              height={1080}
-            />
-          </CardHeader>
-          <CardContent>
-            <div className="flex gap-2 mb-6 flex-wrap">
-              {/* <Badge>{props.project.title}</Badge> */}
-              {props.categories.map((category, i) => (
-                <Badge key={i} variant={category} className="capitalize">
-                  {category}
-                </Badge>
-              ))}
-            </div>
-            <CardTitle className="mb-1">{props.title}</CardTitle>
-            <CardDescription className="line-clamp-2">
-              {props.description}
-            </CardDescription>
-          </CardContent>
-          <CardFooter>
-            <Link href={props.href}>
-              <Button>
-                View product
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </CardFooter>
-        </Card>
-      </Link>
+      <Card {...props}>
+        <CardHeader>
+          <Image
+            src={props.img}
+            alt={props.title}
+            className="border-b rounded-t-lg"
+            width={1920}
+            height={1080}
+          />
+        </CardHeader>
+        <CardContent>
+          <div className="flex gap-2 mb-6 flex-wrap">
+            {/* <Badge>{props.project.title}</Badge> */}
+            {props.categories.map((category, i) => (
+              <Badge key={i} variant={category} className="capitalize">
+                {category}
+              </Badge>
+            ))}
+          </div>
+          <CardTitle className="mb-1">{props.title}</CardTitle>
+          <CardDescription className="line-clamp-2">
+            {props.description}
+          </CardDescription>
+        </CardContent>
+        <CardFooter>
+          <Link href={props.href}>
+            <Button>
+              View product
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </CardFooter>
+      </Card>
     </motion.div>
   );
 }
