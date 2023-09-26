@@ -13,6 +13,7 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground",
         outline: "text-foreground",
+        card: "bg-background text-foreground",
         research: "border-transparent bg-green-500/20 text-green-500",
         design: "border-transparent bg-red-500/20 text-red-500",
         development: "border-transparent bg-pink-500/20 text-pink-500",

@@ -130,7 +130,7 @@ export function ProductGrid({ className }: { className?: string }) {
               />
             ))
           ) : (
-            <P>No products found.</P>
+            <P className="transition-all">No products found.</P>
           )}
         </AnimatePresence>
       </div>

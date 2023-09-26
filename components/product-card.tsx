@@ -37,23 +37,27 @@ export function ProductCard({ ...props }: Product) {
         >
           <CardHeader>
             <Image
-              src={props.img}
+              src={
+                props.img
+                  ? props.img
+                  : `/img/thumbnails/${props.categories[0]}-thumb.png`
+              }
               alt={props.title}
               className="border-b rounded-t-lg"
               width={1920}
               height={1080}
             />
           </CardHeader>
-          <CardContent>
-            <div className="flex gap-2 mb-6 flex-wrap">
+          <CardContent className="relative pt-1.5">
+            <div className="absolute -top-9 z-20 left-6 flex gap-2 mb-6 flex-wrap">
               {/* <Badge>{props.project.title}</Badge> */}
               {props.categories.map((category, i) => (
-                <Badge key={i} variant={category} className="capitalize">
+                <Badge key={i} variant="card" className="capitalize">
                   {category}
                 </Badge>
               ))}
             </div>
-            <CardTitle className="mb-1">{props.title}</CardTitle>
+            <CardTitle className="mb-2">{props.title}</CardTitle>
             <CardDescription className="line-clamp-2">
               {props.description}
             </CardDescription>
