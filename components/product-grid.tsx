@@ -37,24 +37,27 @@ export function ProductGrid({ className }: { className?: string }) {
 
   const learningOutcomes = [
     {
-      title: "User interaction (analysis & advice)",
+      title: "1: User interaction (analysis & advice)",
       slug: "user-interaction-analysis",
     },
     {
-      title: "User interaction (execution & validation)",
+      title: "2: User interaction (execution & validation)",
       slug: "user-interaction-execution",
     },
-    { title: "Software design and realisation", slug: "software-design" },
+    { title: "3: Software design and realisation", slug: "software-design" },
     {
-      title: "Future-oriented organisation",
+      title: "4: Future-oriented organisation",
       slug: "future-oriented-organisation",
     },
     {
-      title: "Investigative problem solving",
+      title: "5: Investigative problem solving",
       slug: "investigative-problem-solving",
     },
-    { title: "Personal leadership", slug: "personal-leadership" },
-    { title: "Goal-oriented interaction", slug: "goal-oriented-interaction" },
+    { title: "6: Personal leadership", slug: "personal-leadership" },
+    {
+      title: "7: Goal-oriented interaction",
+      slug: "goal-oriented-interaction",
+    },
   ];
 
   const filteredProducts = products.filter((product) => {
@@ -108,7 +111,7 @@ export function ProductGrid({ className }: { className?: string }) {
       </div>
       <div
         className={cn(
-          "grid 2xl:grid-cols-3 md:grid-cols-2 gap-8 mt-6",
+          "grid 2xl:grid-cols-3 md:grid-cols-2 gap-8 mt-8",
           className
         )}
       >
@@ -127,7 +130,7 @@ export function ProductGrid({ className }: { className?: string }) {
               />
             ))
           ) : (
-            <P>No products found.</P>
+            <P className="transition-all">No products found.</P>
           )}
         </AnimatePresence>
       </div>
