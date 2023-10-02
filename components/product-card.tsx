@@ -37,11 +37,7 @@ export function ProductCard({ ...props }: Product) {
         >
           <CardHeader>
             <Image
-              src={
-                props.img
-                  ? props.img
-                  : `/img/thumbnails/${props.categories[0]}-thumb.png`
-              }
+              src={`/img/thumbnails/base-thumb.png`}
               alt={props.title}
               className="border-b rounded-t-lg"
               width={1920}
