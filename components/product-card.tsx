@@ -4,11 +4,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cva, type VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
 import { Product } from "@/lib/types/Product";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,6 +21,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { ProductCardBackground } from "./product-card-background";
 import { Badge } from "./ui/badge";
 
 export function ProductCard({ ...props }: Product) {
@@ -36,13 +39,16 @@ export function ProductCard({ ...props }: Product) {
           className="group-hover:-translate-y-2 transition-transform"
         >
           <CardHeader>
-            <Image
+            <ProductCardBackground variant={props.categories[0]}>
+              <Image src={props.img} alt={props.title} width={80} height={80} />
+            </ProductCardBackground>
+            {/* <Image
               src={`/img/thumbnails/base-thumb.png`}
               alt={props.title}
               className="border-b rounded-t-lg"
               width={1920}
               height={1080}
-            />
+            /> */}
           </CardHeader>
           <CardContent className="relative pt-1.5">
             <div className="absolute -top-9 z-10 left-6 flex gap-2 mb-6 flex-wrap">
