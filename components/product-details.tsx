@@ -32,7 +32,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         <Image src={product.img} alt={product.title} width={80} height={80} />
       </ProductCardBackground>
       {product.data && (
-        <Card className="flex flex-col gap-8 p-4 md:p-6 lg:p-8 w-full">
+        <>
           {product.data.learningOutcomes && (
             <div>
               <H4>Learning Outcomes</H4>
@@ -46,7 +46,7 @@ export default function ProductDetails({ product }: { product: Product }) {
             </div>
           )}
           {product.data.researchMethods && (
-            <div>
+            <div className="mt-8">
               <H4>Research Methods</H4>
               <div className="flex gap-2 mt-2 flex-wrap">
                 {product.data.researchMethods.map((researchMethod, i) => (
@@ -57,7 +57,7 @@ export default function ProductDetails({ product }: { product: Product }) {
               </div>
             </div>
           )}
-        </Card>
+        </>
       )}
     </div>
   );

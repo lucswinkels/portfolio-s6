@@ -30,6 +30,14 @@ export default function WebTechnologiesResearch() {
             eligendi eveniet, nostrum, quisquam voluptatum eos ipsam ducimus
             cumque eaque nulla voluptatibus! Ea, vitae soluta?
           </P>
+          <Button className="mt-4">
+            <a
+              href="/files/individual-project/research/web-technologies-research.pdf"
+              target="_blank"
+            >
+              Link to document
+            </a>
+          </Button>
         </ContentSection>
         <Image
           src="/logo/banner.png"

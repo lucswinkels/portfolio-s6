@@ -21,7 +21,7 @@ export default function PortfolioContentResearch() {
   const Content = () => {
     return (
       <div className="space-y-16 xl:space-y-32">
-        <ContentSection title="Lorem Ipsum">
+        <ContentSection title="Research">
           <P>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
             tenetur excepturi quam. Nulla minus quaerat facere perspiciatis
@@ -30,6 +30,14 @@ export default function PortfolioContentResearch() {
             eligendi eveniet, nostrum, quisquam voluptatum eos ipsam ducimus
             cumque eaque nulla voluptatibus! Ea, vitae soluta?
           </P>
+          <Button className="mt-4">
+            <a
+              href="/files/individual-project/research/portfolio-content-research.pdf"
+              target="_blank"
+            >
+              Link to document
+            </a>
+          </Button>
         </ContentSection>
         <Image
           src="/logo/banner.png"
