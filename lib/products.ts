@@ -10,7 +10,7 @@ export const products = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
     img: "/logo/png/logo-ls-white.png",
-    categories: ["research", "design"],
+    categories: ["design", "research"],
     data: {
       learningOutcomes: [
         {

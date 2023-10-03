@@ -11,7 +11,7 @@ const productCardBackgroundVariants = cva(
         default: "from-zinc-500 to-zinc-800",
         research: "from-blue-500 to-blue-800",
         design: "from-rose-500 to-rose-800",
-        development: "from-indigo-500 to-indigo-800",
+        development: "from-amber-500 to-amber-800",
       },
     },
     defaultVariants: {

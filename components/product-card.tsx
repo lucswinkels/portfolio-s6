@@ -42,13 +42,6 @@ export function ProductCard({ ...props }: Product) {
             <ProductCardBackground variant={props.categories[0]}>
               <Image src={props.img} alt={props.title} width={80} height={80} />
             </ProductCardBackground>
-            {/* <Image
-              src={`/img/thumbnails/base-thumb.png`}
-              alt={props.title}
-              className="border-b rounded-t-lg"
-              width={1920}
-              height={1080}
-            /> */}
           </CardHeader>
           <CardContent className="relative pt-1.5">
             <div className="absolute -top-9 z-10 left-6 flex gap-2 mb-6 flex-wrap">
