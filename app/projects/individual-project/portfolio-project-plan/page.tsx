@@ -30,6 +30,14 @@ export default function PortfolioProjectPlan() {
             eligendi eveniet, nostrum, quisquam voluptatum eos ipsam ducimus
             cumque eaque nulla voluptatibus! Ea, vitae soluta?
           </P>
+          <Button className="mt-4">
+            <a
+              href="/files/individual-project/documentation/project-plan.pdf"
+              target="_blank"
+            >
+              Link to project plan
+            </a>
+          </Button>
         </ContentSection>
         <Image
           src="/logo/banner.png"

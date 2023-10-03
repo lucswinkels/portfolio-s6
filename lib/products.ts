@@ -8,7 +8,7 @@ export const products = [
     href: "/projects/individual-project/portfolio-ui-design",
     title: "Portfolio UI design",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Designing and testing wireframes and UI prototypes to improve UX.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["design", "research"],
     data: {
@@ -20,6 +20,10 @@ export const products = [
         {
           title: "User interaction (analysis & advice)",
           slug: "user-interaction-analysis",
+        },
+        {
+          title: "Investigative problem solving",
+          slug: "investigative-problem-solving",
         },
       ],
       researchMethods: [
@@ -38,7 +42,7 @@ export const products = [
     href: "/projects/individual-project/web-technologies-research",
     title: "Web technologies research",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Researching which technologies I should use to develop my portfolio.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
@@ -63,7 +67,7 @@ export const products = [
     href: "/projects/individual-project/portfolio-content-research",
     title: "Portfolio content research",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Researching which content management system I should use to write content for my portfolio.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
@@ -74,7 +78,7 @@ export const products = [
         },
       ],
       researchMethods: [
-        { category: "library", method: "Trend analysis" },
+        { category: "library", method: "Expert interview" },
         { category: "library", method: "Literature study" },
       ],
     },
@@ -88,7 +92,7 @@ export const products = [
     href: "/projects/individual-project/portfolio-project-plan",
     title: "Portfolio project plan",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Documenting a project plan for a solid project structure, approach and planning.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
@@ -109,7 +113,7 @@ export const products = [
     href: "/projects/individual-project/portfolio-c4-model",
     title: "Portfolio C4 model",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Designing a C4 model to visualise the architecture of my portfolio.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["design"],
     data: {
@@ -130,7 +134,7 @@ export const products = [
     href: "/projects/individual-project/portfolio-development",
     title: "Portfolio development",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
+      "Developing my portfolio with the modern technologies I researched.",
     img: "/logo/png/logo-ls-white.png",
     categories: ["development"],
     data: {
