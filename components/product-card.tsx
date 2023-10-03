@@ -45,7 +45,7 @@ export function ProductCard({ ...props }: Product) {
             />
           </CardHeader>
           <CardContent className="relative pt-1.5">
-            <div className="absolute -top-9 z-20 left-6 flex gap-2 mb-6 flex-wrap">
+            <div className="absolute -top-9 z-10 left-6 flex gap-2 mb-6 flex-wrap">
               {/* <Badge>{props.project.title}</Badge> */}
               {props.categories.map((category, i) => (
                 <Badge key={i} variant="card" className="capitalize">
