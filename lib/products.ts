@@ -9,8 +9,8 @@ export const products = [
     title: "Portfolio UI design",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
-    categories: ["research", "design"],
+    img: "/logo/png/logo-ls-white.png",
+    categories: ["design", "research"],
     data: {
       learningOutcomes: [
         {
@@ -39,7 +39,7 @@ export const products = [
     title: "Web technologies research",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
+    img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
       learningOutcomes: [
@@ -64,7 +64,7 @@ export const products = [
     title: "Portfolio content research",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
+    img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
       learningOutcomes: [
@@ -89,7 +89,7 @@ export const products = [
     title: "Portfolio project plan",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
+    img: "/logo/png/logo-ls-white.png",
     categories: ["research"],
     data: {
       learningOutcomes: [
@@ -110,7 +110,7 @@ export const products = [
     title: "Portfolio C4 model",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
+    img: "/logo/png/logo-ls-white.png",
     categories: ["design"],
     data: {
       learningOutcomes: [
@@ -131,7 +131,7 @@ export const products = [
     title: "Portfolio development",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed ducimus atque assumenda cum maxime debitis impedit vel quam enim",
-    img: "/logo/banner.png",
+    img: "/logo/png/logo-ls-white.png",
     categories: ["development"],
     data: {
       learningOutcomes: [
