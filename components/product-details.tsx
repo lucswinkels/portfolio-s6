@@ -26,7 +26,7 @@ export default function ProductDetails({ product }: { product: Product }) {
       <H1>{product.title}</H1>
       <P>{product.description}</P>
       <ProductCardBackground
-        className="rounded-lg border shadow-sm my-16 h-[80vh] w-full"
+        className="rounded-lg border shadow-sm my-16 xl:h-[60vh] h-[30vh] w-full"
         variant={product.categories[0]}
       >
         <Image src={product.img} alt={product.title} width={80} height={80} />
