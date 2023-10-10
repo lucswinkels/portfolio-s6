@@ -34,15 +34,13 @@ export function ProductCard({ ...props }: Product) {
           className="group-hover:-translate-y-2 transition-transform"
         >
           <CardHeader>
-            {props?.imgSrc ? (
-              <Image
-                src={builder.image(props.imgSrc).width(300).height(300).url()}
-                className="border-b rounded-t-lg"
-                width={1920}
-                height={1080}
-                alt={props?.imgAlt}
-              />
-            ) : null}
+            <Image
+              src={builder.image(props.imgSrc).width(1920).height(1080).url()}
+              className="border-b rounded-t-lg"
+              width={1920}
+              height={1080}
+              alt={props?.imgAlt}
+            />
           </CardHeader>
           <CardContent className="relative pt-1.5">
             <div className="absolute -top-9 z-10 left-6 flex gap-2 mb-6 flex-wrap">

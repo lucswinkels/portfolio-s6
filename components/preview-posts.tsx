@@ -4,7 +4,7 @@ import { postsQuery } from "@/sanity/lib/queries";
 import type { SanityDocument } from "@sanity/client";
 import { useLiveQuery } from "@sanity/preview-kit";
 
-import Posts from "./posts";
+import Posts from "./posts-grid";
 
 export default function PreviewPosts({
   posts = [],

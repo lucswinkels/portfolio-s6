@@ -7,11 +7,9 @@ import { SanityDocument } from "next-sanity";
 
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
-import Posts from "@/components/posts";
+import Posts from "@/components/posts-grid";
 import PreviewPosts from "@/components/preview-posts";
 import PreviewProvider from "@/components/preview-provider";
-import { ProductGrid } from "@/components/product-grid";
-import Projects from "@/components/projects";
 import { H1 } from "@/components/typography/h1";
 
 export const metadata: Metadata = {
