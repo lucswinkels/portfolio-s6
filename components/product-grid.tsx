@@ -70,6 +70,7 @@ export function ProductGrid({ className }: { className?: string }) {
         ))
     );
   });
+
   return (
     <>
       <div className="flex gap-4 flex-wrap">

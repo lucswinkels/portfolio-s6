@@ -1,5 +1,5 @@
 export type Product = {
-  project: {
+  project?: {
     slug: string;
     title: string;
   };
@@ -7,7 +7,8 @@ export type Product = {
   slug: string;
   href: string;
   description: string;
-  img: string;
+  imgSrc: string;
+  imgAlt: string;
   categories: string[];
   data?: {
     learningOutcomes?: { title: string; slug: string }[];
