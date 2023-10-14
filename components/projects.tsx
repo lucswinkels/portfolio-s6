@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 import { ProjectPreviewCard } from "./project-preview-card";
 
-export default function Posts({
+export default function Projects({
   projects = [],
   className,
 }: {

@@ -18,7 +18,7 @@ import {
 const builder = imageUrlBuilder(client);
 export function ProjectPreviewCard({ ...props }) {
   return (
-    <Link href={props.href} className="group">
+    <Link href={`/projects/${props.href}`} className="group">
       <motion.div
         key={props.slug}
         initial="hidden"
@@ -39,7 +39,7 @@ export function ProjectPreviewCard({ ...props }) {
               alt={props.image.alt}
             />
           </CardHeader>
-          <CardContent className="relative pt-1.5">
+          <CardContent>
             <CardTitle className="mb-2">{props.title}</CardTitle>
             <CardDescription className="line-clamp-2">
               {props.description}
