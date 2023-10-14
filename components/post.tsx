@@ -17,16 +17,14 @@ export default function Post({ post }: { post: SanityDocument }) {
     <Container className="prose prose-lg">
       <H1>{post.title}</H1>
       <P>{post.description}</P>
-      {post?.mainImage ? (
-        <Image
-          className=""
-          src={builder.image(post.mainImage).width(300).height(300).url()}
-          width={300}
-          height={300}
-          alt={post?.mainImage?.alt}
-        />
-      ) : null}
-      {post?.body ? <PortableText value={post.body} /> : null}
+      <Image
+        src={builder.image(post.mainImage).width(1920).height(1080).url()}
+        className="rounded-lg"
+        width={1920}
+        height={1080}
+        alt={post.mainImage.alt}
+      />
+      <PortableText value={post.body} />
     </Container>
   );
 }
