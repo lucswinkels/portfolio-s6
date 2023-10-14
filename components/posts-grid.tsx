@@ -1,13 +1,13 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { SanityDocument } from "@sanity/client";
 import { AnimatePresence } from "framer-motion";
 
+import { learningOutcomes } from "@/lib/learningOutcomes";
 import { cn } from "@/lib/utils";
 
-import { ProductCard } from "./product-card";
+import { PostPreviewCard } from "./post-preview-card";
 import { P } from "./typography/p";
 import {
   Select,
@@ -25,45 +25,20 @@ export default function Posts({
   posts: SanityDocument[];
   className?: string;
 }) {
-  const title = posts.length === 1 ? `1 Post` : `${posts.length} Posts`;
   const [selectedLearningOutcome, setSelectedLearningOutcome] = React.useState(
     "all-learning-outcomes"
   );
-  const learningOutcomes = [
-    {
-      title: "1: User interaction (analysis & advice)",
-      slug: "1-user-interaction-analysis-and-advice",
-    },
-    {
-      title: "2: User interaction (execution & validation)",
-      slug: "2-user-interaction-execution-and-validation",
-    },
-    {
-      title: "3: Software design and realisation",
-      slug: "3-software-design-and-realisation",
-    },
-    {
-      title: "4: Future-oriented organisation",
-      slug: "4-future-oriented-organisation",
-    },
-    {
-      title: "5: Investigative problem solving",
-      slug: "5-investigative-problem-solving",
-    },
-    { title: "6: Personal leadership", slug: "6-personal-leadership" },
-    {
-      title: "7: Goal-oriented interaction",
-      slug: "7-goal-oriented-interaction",
-    },
-  ];
+
   const filteredPosts = posts.filter((post) => {
     return (
       selectedLearningOutcome === "all-learning-outcomes" ||
       post.learningOutcomes.some(
-        (outcome: any) => outcome.slug === selectedLearningOutcome
+        (outcome: any) => outcome.slug.current === selectedLearningOutcome
       )
     );
   });
+
+  console.log(posts);
   return (
     <>
       <div className="flex gap-4 flex-wrap">
@@ -95,14 +70,13 @@ export default function Posts({
         )}
       >
         <AnimatePresence>
-          {filteredPosts ? (
+          {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
-              <ProductCard
+              <PostPreviewCard
                 key={post._id}
                 title={post.title}
                 slug={post.slug.current}
-                imgSrc={post.mainImage}
-                imgAlt={post.mainImage.alt}
+                image={post.mainImage}
                 description={post.description}
                 categories={post.categories}
                 href={post.slug.current}

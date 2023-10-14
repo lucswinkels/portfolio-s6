@@ -25,9 +25,16 @@ export default async function Home() {
 
   if (isDraftMode && token) {
     return (
-      <PreviewProvider token={token}>
-        <PreviewPosts posts={posts} />
-      </PreviewProvider>
+      <Container>
+        <FadeUp>
+          <H1>Portfolio</H1>
+          <div className="mt-6 xl:mt-12">
+            <PreviewProvider token={token}>
+              <PreviewPosts posts={posts} />
+            </PreviewProvider>
+          </div>
+        </FadeUp>
+      </Container>
     );
   }
   return (

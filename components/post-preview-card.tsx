@@ -7,7 +7,6 @@ import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
 
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
-import { Product } from "@/lib/types/Product";
 import {
   Card,
   CardContent,
@@ -19,7 +18,7 @@ import {
 import { Badge } from "./ui/badge";
 
 const builder = imageUrlBuilder(client);
-export function ProductCard({ ...props }: Product) {
+export function PostPreviewCard({ ...props }) {
   return (
     <Link href={props.href} className="group">
       <motion.div
@@ -35,16 +34,16 @@ export function ProductCard({ ...props }: Product) {
         >
           <CardHeader>
             <Image
-              src={builder.image(props.imgSrc).width(1920).height(1080).url()}
+              src={builder.image(props.image).width(1920).height(1080).url()}
               className="border-b rounded-t-lg"
               width={1920}
               height={1080}
-              alt={props.imgAlt}
+              alt={props.image.alt}
             />
           </CardHeader>
           <CardContent className="relative pt-1.5">
             <div className="absolute -top-9 z-10 left-6 flex gap-2 mb-6 flex-wrap">
-              {props.categories.map((category, i) => (
+              {props.categories.map((category: string, i: number) => (
                 <Badge key={i} variant="card" className="capitalize">
                   {category}
                 </Badge>

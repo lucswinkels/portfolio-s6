@@ -5,13 +5,17 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
   _id, title, slug, description, mainImage,
   "categories": categories[]->title,
   "project": project->title,
-  "learningOutcomes": learningOutcomes[]->title,
+  "learningOutcomes": learningOutcomes[]->{title, slug},
 }`;
 
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
-    title, mainImage, body, description
-  }`;
+  title, mainImage, body, description, 
+  "categories": categories[]->title, 
+  "project": project->title,
+  "learningOutcomes": learningOutcomes[]->{title, slug},   
+  "researchMethods": researchMethods[]->{title, slug, "category": researchMethodCategory->title},
+}`;
 
 // Get all post slugs
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
@@ -21,4 +25,4 @@ export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]
 // Get all projects
 export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]{
     _id, title, slug, description, mainImage
-  }`;
+}`;

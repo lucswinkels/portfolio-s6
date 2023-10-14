@@ -58,6 +58,12 @@ export default defineType({
       of: [{ type: "reference", to: { type: "learningOutcome" } }],
     }),
     defineField({
+      name: "researchMethods",
+      title: "Research Methods",
+      type: "array",
+      of: [{ type: "reference", to: { type: "researchMethod" } }],
+    }),
+    defineField({
       name: "body",
       title: "Body",
       type: "blockContent",
