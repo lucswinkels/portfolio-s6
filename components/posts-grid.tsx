@@ -64,6 +64,7 @@ export default function Posts({
       )
     );
   });
+  console.log(posts);
   return (
     <>
       <div className="flex gap-4 flex-wrap">
@@ -95,18 +96,19 @@ export default function Posts({
         )}
       >
         <AnimatePresence>
-          {posts.length > 0 ? (
-            posts.map((post) => (
-              <ProductCard
-                key={post._id}
-                title={post.title}
-                slug={post.slug.current}
-                imgSrc={post.mainImage}
-                imgAlt={post.mainImage}
-                description={post.description}
-                categories={post.categories}
-                href={post.slug.current}
-              />
+          {filteredPosts ? (
+            filteredPosts.map((post) => (
+              // <ProductCard
+              //   key={post._id}
+              //   title={post.title}
+              //   slug={post.slug.current}
+              //   imgSrc={post.mainImage}
+              //   imgAlt={post.mainImage}
+              //   description={post.description}
+              //   categories={post.categories}
+              //   href={post.slug.current}
+              // />
+              <p>{post.title}</p>
             ))
           ) : (
             <P className="transition-all">No posts found.</P>

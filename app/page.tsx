@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { postsQuery, projectsQuery } from "@/sanity/lib/queries";
+import { postsQuery, postsRefQuery, projectsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
+  const posts = await sanityFetch<SanityDocument[]>({ query: postsRefQuery });
   const projects = await sanityFetch<SanityDocument[]>({
     query: projectsQuery,
   });

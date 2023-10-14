@@ -39,7 +39,7 @@ export function ProductCard({ ...props }: Product) {
               className="border-b rounded-t-lg"
               width={1920}
               height={1080}
-              alt={props?.imgAlt}
+              alt={props.imgAlt}
             />
           </CardHeader>
           <CardContent className="relative pt-1.5">

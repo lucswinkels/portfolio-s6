@@ -20,7 +20,10 @@ export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]
     _id, title, slug, description, mainImage
   }`;
 
-// Get all learning outcomes
-export const learningOutcomesQuery = groq`*[_type == "learningOutcome"]{
-    title, slug
-  }`;
+// Test query
+export const postsRefQuery = groq`*[_type == "post" && defined(slug.current)]{
+  _id, title, slug, description, mainImage,
+  "categories": *[_type == "category" && references(^._id)].title[]->title,
+  "project": *[_type == "project" && references(^._id)].title[]->title,
+  "learningOutcomes": *[_type == "learningOutcome" && references(^._id)].title[]->title,
+}`;
