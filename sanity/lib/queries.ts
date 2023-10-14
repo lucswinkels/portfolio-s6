@@ -22,7 +22,17 @@ export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]
     "params": { "slug": slug.current }
   }`;
 
+// Get all project slugs
+export const projectPathsQuery = groq`*[_type == "project" && defined(slug.current)][]{
+  "params": { "slug": slug.current }
+}`;
+
 // Get all projects
 export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]{
     _id, title, slug, description, mainImage
+}`;
+
+// Get a single project by its slug
+export const projectQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
+  title, mainImage, body, description
 }`;

@@ -38,7 +38,6 @@ export default function Posts({
     );
   });
 
-  console.log(posts);
   return (
     <>
       <div className="flex gap-4 flex-wrap">

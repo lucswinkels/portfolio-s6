@@ -16,15 +16,15 @@ const builder = imageUrlBuilder(client);
 export default function Post({ post }: { post: SanityDocument }) {
   return (
     <Container>
-      <P>{post.project} project</P>
+      <Badge variant="outline">{post.project}</Badge>
       <H1>{post.title}</H1>
       <P>{post.description}</P>
       {post.categories.map((category: any) => (
         <Badge variant="outline">{category}</Badge>
       ))}
-      {/* {post.researchMethods.map((method: any) => (
-        <Badge variant="outline">{method}</Badge>
-      ))} */}
+      {post.researchMethods.map((method: any) => (
+        <Badge variant="outline">{method.title}</Badge>
+      ))}
       <Image
         src={builder.image(post.mainImage).width(1920).height(1080).url()}
         className="rounded-lg"
