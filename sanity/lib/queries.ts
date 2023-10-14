@@ -8,6 +8,16 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
   "learningOutcomes": learningOutcomes[]->{title, slug},
 }`;
 
+// Get specific project's posts
+export const generateProjectPostsQuery = (
+  projectSlug: string
+) => groq`*[_type == "post" && defined(slug.current) && references(project->slug == ${projectSlug})]{
+  _id, title, slug, description, mainImage,
+  "categories": categories[]->title,
+  "project": project->title,
+  "learningOutcomes": learningOutcomes[]->{title, slug},
+}`;
+
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
   title, mainImage, body, description, 
@@ -33,6 +43,6 @@ export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]
 }`;
 
 // Get a single project by its slug
-export const projectQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
-  title, mainImage, body, description
+export const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]{ 
+  title, mainImage, body, description, slug
 }`;

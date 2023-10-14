@@ -1,49 +1,20 @@
 import * as React from "react";
 import { Metadata } from "next";
-import { draftMode } from "next/headers";
-import { postsQuery, projectsQuery } from "@/sanity/lib/queries";
-import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
+import { projectQuery } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
-import FadeUp from "@/components/animation/fade-up";
-import Container from "@/components/container";
-import Posts from "@/components/posts";
-import PreviewPosts from "@/components/preview-posts";
-import PreviewProvider from "@/components/preview-provider";
-import { H1 } from "@/components/typography/h1";
+import Project from "@/components/project";
 
 export const metadata: Metadata = {
   title: "Individual project",
 };
 
 export default async function IndividualProject() {
-  const posts = await sanityFetch<SanityDocument[]>({
-    query: postsQuery,
+  const slug = "individual-project";
+  const project = await sanityFetch<SanityDocument[]>({
+    query: projectQuery,
+    params: { slug },
   });
-  const isDraftMode = draftMode().isEnabled;
-
-  if (isDraftMode && token) {
-    return (
-      <Container>
-        <FadeUp>
-          <H1>Individual project</H1>
-          <div className="mt-6 xl:mt-12">
-            <PreviewProvider token={token}>
-              <PreviewPosts posts={posts} />
-            </PreviewProvider>
-          </div>
-        </FadeUp>
-      </Container>
-    );
-  }
-  return (
-    <Container>
-      <FadeUp>
-        <H1>Individual project</H1>
-        <div className="mt-6 xl:mt-12">
-          <Posts posts={posts} />
-        </div>
-      </FadeUp>
-    </Container>
-  );
+  return <Project project={project} />;
 }
