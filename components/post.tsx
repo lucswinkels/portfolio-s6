@@ -25,10 +25,14 @@ export default function Post({ post }: { post: SanityDocument }) {
         <P>{post.description}</P>
         <div className="flex gap-4 flex-wrap my-8">
           {post.categories.map((category: any) => (
-            <Badge variant="outline">{category}</Badge>
+            <Badge variant="outline" key={category}>
+              {category}
+            </Badge>
           ))}
           {post.researchMethods.map((method: any) => (
-            <Badge variant="outline">{method.title}</Badge>
+            <Badge variant="outline" key={method}>
+              {method.title}
+            </Badge>
           ))}
         </div>
         <Image
