@@ -19,20 +19,20 @@ import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 
 export function Navbar() {
-  // const projects = [
-  //   {
-  //     title: "Individual project",
-  //     href: "/projects/individual-project",
-  //   },
-  //   {
-  //     title: "International project",
-  //     href: "/projects/international-project",
-  //   },
-  //   {
-  //     title: "Group project",
-  //     href: "/projects/group-project",
-  //   },
-  // ];
+  const projects = [
+    {
+      title: "Individual project",
+      href: "/projects/individual-project",
+    },
+    {
+      title: "International project",
+      href: "/projects/international-project",
+    },
+    {
+      title: "Group project",
+      href: "/projects/group-project",
+    },
+  ];
   return (
     <Container className="border-b fixed top-0 left-0 z-20 bg-background">
       <div className="w-full items-center justify-between flex py-4 lg:py-6">
@@ -40,14 +40,7 @@ export function Navbar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <a
-                href="/files/reading-guide/reading-guide.pdf"
-                className={navigationMenuTriggerStyle()}
-                target="_blank"
-              >
-                Reading guide
-              </a>
-              {/* <NavigationMenuTrigger>Reading guides</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Reading guides</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-max gap-3 p-4">
                   {projects.map((project, i) => (
@@ -58,7 +51,7 @@ export function Navbar() {
                     />
                   ))}
                 </ul>
-              </NavigationMenuContent> */}
+              </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <ModeToggle />
