@@ -19,7 +19,7 @@ export default async function Project({
 }) {
   const posts = await sanityFetch<SanityDocument[]>({
     query: projectPostsQuery,
-    params: { project: project.slug.current },
+    params: { projectSlug: project.slug.current },
   });
   console.log(posts);
   const isDraftMode = draftMode().isEnabled;

@@ -9,7 +9,7 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
 }`;
 
 // Get specific project's posts
-export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current) && references(project->slug == $project)]{
+export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $projectSlug]{
   _id, title, slug, description, mainImage,
   "categories": categories[]->title,
   "project": project->title,
