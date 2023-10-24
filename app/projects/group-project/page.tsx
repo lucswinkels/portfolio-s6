@@ -1,31 +1,19 @@
 import { Metadata } from "next";
+import { projectQuery } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/sanityFetch";
+import { SanityDocument } from "next-sanity";
 
-import FadeUp from "@/components/animation/fade-up";
-import Container from "@/components/container";
-import { H1 } from "@/components/typography/h1";
-import { P } from "@/components/typography/p";
+import Project from "@/components/project";
 
 export const metadata: Metadata = {
   title: "Group project",
 };
 
-export default function GroupProject() {
-  const Content = () => {
-    return (
-      <>
-        <FadeUp>
-          <H1>Group project</H1>
-          <P>Reading guide coming soon.</P>
-        </FadeUp>
-      </>
-    );
-  };
-
-  return (
-    <Container>
-      <FadeUp>
-        <Content />
-      </FadeUp>
-    </Container>
-  );
+export default async function GroupProject() {
+  const slug = "group-project";
+  const project = await sanityFetch<SanityDocument>({
+    query: projectQuery,
+    params: { slug },
+  });
+  return <Project project={project} />;
 }
