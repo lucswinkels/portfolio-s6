@@ -21,7 +21,6 @@ export default async function Project({
     query: projectPostsQuery,
     params: { projectSlug: project.slug.current },
   });
-  console.log(posts);
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && token) {
