@@ -1,6 +1,6 @@
 import * as React from "react";
 import { draftMode } from "next/headers";
-import { generateProjectPostsQuery } from "@/sanity/lib/queries";
+import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
@@ -18,9 +18,10 @@ export default async function Project({
   project: SanityDocument;
 }) {
   const posts = await sanityFetch<SanityDocument[]>({
-    query: generateProjectPostsQuery(project.slug.current),
+    query: projectPostsQuery,
+    params: { project: project.slug.current },
   });
-
+  console.log(posts);
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && token) {
@@ -28,7 +29,7 @@ export default async function Project({
       <Container>
         <FadeUp>
           <H1>{project.title}</H1>
-          <div className="mt-6 xl:mt-12">
+          <div className="mt-8">
             <PreviewProvider token={token}>
               <PreviewPosts posts={posts} />
             </PreviewProvider>
@@ -41,7 +42,7 @@ export default async function Project({
     <Container>
       <FadeUp>
         <H1>{project.title}</H1>
-        <div className="mt-6 xl:mt-12">
+        <div className="mt-8">
           <Posts posts={posts} />
         </div>
       </FadeUp>

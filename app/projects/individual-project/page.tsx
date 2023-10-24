@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function IndividualProject() {
   const slug = "individual-project";
-  const project = await sanityFetch<SanityDocument[]>({
+  const project = await sanityFetch<SanityDocument>({
     query: projectQuery,
     params: { slug },
   });
