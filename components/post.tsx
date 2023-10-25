@@ -23,18 +23,20 @@ export default function Post({ post }: { post: SanityDocument }) {
         </Badge>
         <H1>{post.title}</H1>
         <P>{post.description}</P>
-        <div className="flex gap-4 flex-wrap my-8">
-          {post.categories.map((category: any) => (
-            <Badge variant="outline" key={category}>
-              {category}
-            </Badge>
-          ))}
-          {post.researchMethods.map((method: any) => (
-            <Badge variant="outline" key={method}>
-              {method.title}
-            </Badge>
-          ))}
-        </div>
+        {post.categories || post.researchMethods ? (
+          <div className="flex gap-4 flex-wrap my-8">
+            {post.categories.map((category: any) => (
+              <Badge variant="outline" key={category}>
+                {category}
+              </Badge>
+            ))}
+            {post.researchMethods.map((method: any) => (
+              <Badge variant="outline" key={method}>
+                {method.title}
+              </Badge>
+            ))}
+          </div>
+        ) : null}
         <Image
           src={builder.image(post.mainImage).width(1920).height(1080).url()}
           className="rounded-lg mb-16 border"
