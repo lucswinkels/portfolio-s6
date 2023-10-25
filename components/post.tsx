@@ -25,16 +25,18 @@ export default function Post({ post }: { post: SanityDocument }) {
         <P>{post.description}</P>
         {post.categories || post.researchMethods ? (
           <div className="flex gap-4 flex-wrap my-8">
-            {post.categories.map((category: any) => (
-              <Badge variant="outline" key={category}>
-                {category}
-              </Badge>
-            ))}
-            {post.researchMethods.map((method: any) => (
-              <Badge variant="outline" key={method}>
-                {method.title}
-              </Badge>
-            ))}
+            {post.categories &&
+              post.categories.map((category: any) => (
+                <Badge variant="outline" key={category}>
+                  {category}
+                </Badge>
+              ))}
+            {post.researchMethods &&
+              post.researchMethods.map((method: any) => (
+                <Badge variant="outline" key={method}>
+                  {method.title}
+                </Badge>
+              ))}
           </div>
         ) : null}
         <Image
@@ -45,7 +47,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose prose-lg dark:prose-invert">
+        <div className="prose dark:prose-invert">
           <PortableText value={post.body} />
         </div>
       </Container>
