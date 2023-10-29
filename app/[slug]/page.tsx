@@ -16,11 +16,8 @@ export async function generateMetadata({ params, searchParams }: any) {
   };
 }
 
-// Prepare Next.js to know which routes already exist
 export async function generateStaticParams() {
-  // Important, use the plain Sanity Client here
   const posts = await client.fetch(postPathsQuery);
-
   return posts;
 }
 
