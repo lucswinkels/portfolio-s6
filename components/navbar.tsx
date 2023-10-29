@@ -40,7 +40,7 @@ export function Navbar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Reading guides</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-max gap-3 p-4">
                   {projects.map((project, i) => (
