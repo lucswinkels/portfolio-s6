@@ -2,10 +2,18 @@
 
 import * as React from "react";
 import { SanityDocument } from "@sanity/client";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { RotateCcw } from "lucide-react";
 
 import { learningOutcomes } from "@/lib/learningOutcomes";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { PostPreviewCard } from "./post-preview-card";
 import { P } from "./typography/p";
@@ -38,6 +46,10 @@ export default function Posts({
     );
   });
 
+  const handleResetLearningOutcomes = () => {
+    setSelectedLearningOutcome("all-learning-outcomes");
+  };
+
   return (
     <>
       <div className="flex gap-4 flex-wrap">
@@ -61,6 +73,24 @@ export default function Posts({
             </SelectGroup>
           </SelectContent>
         </Select>
+        {selectedLearningOutcome !== "all-learning-outcomes" && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleResetLearningOutcomes}
+                >
+                  <RotateCcw className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Reset</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
       </div>
       <div
         className={cn(
@@ -82,7 +112,9 @@ export default function Posts({
               />
             ))
           ) : (
-            <P className="transition-all">No posts found.</P>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <P className="transition-all">No posts found.</P>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>

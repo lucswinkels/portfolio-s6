@@ -39,7 +39,7 @@ export function ProjectPreviewCard({ ...props }) {
               alt={props.image.alt}
             />
           </CardHeader>
-          <CardContent>
+          <CardContent className="relative">
             <CardTitle className="mb-2">{props.title}</CardTitle>
             <CardDescription className="line-clamp-2">
               {props.description}

@@ -11,6 +11,7 @@ import { H1 } from "@/components/typography/h1";
 
 import Posts from "./posts";
 import PreviewPosts from "./preview-posts";
+import { P } from "./typography/p";
 
 export default async function Project({
   project,
@@ -41,7 +42,8 @@ export default async function Project({
     <Container>
       <FadeUp>
         <H1>{project.title}</H1>
-        <div className="mt-8">
+        <P>{project.description}</P>
+        <div className="mt-8 xl:mt-16">
           <Posts posts={posts} />
         </div>
       </FadeUp>
