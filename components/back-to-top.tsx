@@ -1,9 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUp, MoveUp } from "lucide-react";
+import { MoveUp } from "lucide-react";
 
 import { Button } from "./ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -27,15 +33,24 @@ export default function BackToTop() {
     };
   }, []);
   return (
-    <a
-      onClick={scrollToTop}
-      className={`${
-        visible ? "visible opacity-100" : "invisible opacity-0"
-      } fixed lg:bottom-8 lg:right-8 bottom-4 right-4 transition-all duration-300 z-10`}
-    >
-      <Button size="icon" className="h-10 w-10 xl:h-12 xl:w-12">
-        <MoveUp className="h-4 w-4" />
-      </Button>
-    </a>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <a
+            onClick={scrollToTop}
+            className={`${
+              visible ? "visible opacity-100" : "invisible opacity-0"
+            } fixed lg:bottom-8 lg:right-8 bottom-4 right-4 transition-all duration-300 z-10`}
+          >
+            <Button size="icon" className="h-8 w-8 xl:h-10 xl:w-10">
+              <MoveUp className="h-4 w-4" />
+            </Button>
+          </a>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Back To Top</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
