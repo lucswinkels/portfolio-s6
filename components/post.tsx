@@ -14,10 +14,12 @@ import { slugify } from "@/lib/utils";
 import FadeUp from "./animation/fade-up";
 import Container from "./container";
 import { H1 } from "./typography/h1";
+import { H2 } from "./typography/h2";
+import { H3 } from "./typography/h3";
+import { H4 } from "./typography/h4";
 import { MutedText } from "./typography/muted-text";
 import { P } from "./typography/p";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 
 const builder = imageUrlBuilder(client);
 
@@ -42,6 +44,13 @@ export default function Post({ post }: { post: SanityDocument }) {
     types: {
       image: ImageComponent,
     },
+    block: {
+      normal: ({ children }: any) => <P>{children}</P>,
+      h1: ({ children }: any) => <H1>{children}</H1>,
+      h2: ({ children }: any) => <H2>{children}</H2>,
+      h3: ({ children }: any) => <H3>{children}</H3>,
+      h4: ({ children }: any) => <H4>{children}</H4>,
+    },
   };
 
   return (
@@ -60,10 +69,10 @@ export default function Post({ post }: { post: SanityDocument }) {
           <ChevronRight className="mx-1 h-4 w-4" />
           <small className="text-sm font-medium">{post.title}</small>
         </div>
-        <H1>{post.title}</H1>
+        <H1 className="mb-4">{post.title}</H1>
         <P>{post.description}</P>
         {post.categories || post.researchMethods ? (
-          <div className="flex gap-4 flex-wrap my-8">
+          <div className="flex gap-2 xl:gap-4 flex-wrap my-8">
             {post.categories &&
               post.categories.map((category: any) => (
                 <Badge variant="outline" key={category}>

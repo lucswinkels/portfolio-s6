@@ -11,10 +11,7 @@ export function P({
 }) {
   return (
     <p
-      className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 max-w-[600px]",
-        className
-      )}
+      className={cn("leading-7 max-w-[600px] text-muted-foreground", className)}
     >
       {children}
     </p>

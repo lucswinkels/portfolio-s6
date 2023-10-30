@@ -30,7 +30,7 @@ export default async function Project({
   const Content = () => (
     <div className="lg:flex justify-between mb-8 xl:mb-16">
       <div>
-        <H1>{project.title}</H1>
+        <H1 className="mb-4">{project.title}</H1>
         <P>{project.description}</P>
       </div>
       <Button asChild className="mt-4 lg:mt-0">
