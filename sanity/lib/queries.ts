@@ -44,3 +44,11 @@ export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]
 export const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]{ 
   title, mainImage, body, description, slug
 }`;
+
+// Get previous/next (related) posts
+export const relatedPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $currentPost]{
+  _id, title, slug, description, mainImage,
+  "categories": categories[]->title,
+  "project": project->title,
+  "learningOutcomes": learningOutcomes[]->{title, slug},
+}`;
