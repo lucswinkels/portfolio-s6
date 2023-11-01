@@ -99,7 +99,7 @@ export default function Post({ post }: { post: SanityDocument }) {
         <div className="prose dark:prose-invert">
           <PortableText value={post.body} components={components} />
         </div>
-        <NextPreviousPost currentPost={post} />
+        {/* <NextPreviousPost currentPost={post} /> */}
       </Container>
     </FadeUp>
   );
