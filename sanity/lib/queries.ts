@@ -46,7 +46,7 @@ export const projectQuery = groq`*[_type == "project" && slug.current == $slug][
 }`;
 
 // Get previous/next (related) posts
-export const relatedPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $currentPost]{
+export const previousPostQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $currentPost]{
   _id, title, slug, description, mainImage,
   "categories": categories[]->title,
   "project": project->title,

@@ -3,11 +3,9 @@
 import Link from "next/link";
 import { SanityDocument } from "next-sanity";
 
-import { H2 } from "./typography/h2";
 import { H3 } from "./typography/h3";
-import { H4 } from "./typography/h4";
 import { P } from "./typography/p";
-import { Card, CardContent } from "./ui/card";
+import { Card } from "./ui/card";
 
 export default function NextPreviousPost({
   currentPost,
@@ -15,24 +13,23 @@ export default function NextPreviousPost({
   currentPost: SanityDocument;
 }) {
   console.log(currentPost);
-
   return (
     <Card className="mt-16 xl:mt-32">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
         <Link
           href=""
-          className="align-end text-end w-full p-8 hover:bg-accent border-r transition-colors"
+          className="group lg:basis-1/2 basis-full align-end text-start lg:text-end w-full p-8 hover:bg-accent border-b lg:border-b-0 lg:border-r transition-colors"
         >
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:-translate-x-2">
             <P>Previous</P>
             <H3>Portfolio UI Design</H3>
           </div>
         </Link>
         <Link
           href=""
-          className="align-start w-full p-8 hover:bg-accent transition-colors"
+          className="group lg:basis-1/2 basis-full align-start w-full p-8 hover:bg-accent transition-colors"
         >
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
             <P>Next</P>
             <H3>Portfolio UI Design</H3>
           </div>
