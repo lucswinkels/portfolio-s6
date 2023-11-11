@@ -13,6 +13,7 @@ import { slugify } from "@/lib/utils";
 
 import FadeUp from "./animation/fade-up";
 import Container from "./container";
+import NextPreviousPost from "./next-previous-post";
 import { H1 } from "./typography/h1";
 import { H2 } from "./typography/h2";
 import { H3 } from "./typography/h3";
@@ -98,6 +99,7 @@ export default function Post({ post }: { post: SanityDocument }) {
         <div className="prose dark:prose-invert">
           <PortableText value={post.body} components={components} />
         </div>
+        {/* <NextPreviousPost currentPost={post} /> */}
       </Container>
     </FadeUp>
   );
