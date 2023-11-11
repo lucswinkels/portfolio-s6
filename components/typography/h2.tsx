@@ -12,7 +12,7 @@ export function H2({
   return (
     <h2
       className={cn(
-        "scroll-m-20 text-3xl lg:text-4xl 2xl:text-5xl font-extrabold tracking-tight transition-colors",
+        "scroll-m-20 text-3xl lg:text-4xl 2xl:text-5xl font-bold tracking-tight",
         className
       )}
     >

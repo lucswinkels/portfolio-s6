@@ -48,7 +48,7 @@ export default function Post({ post }: { post: SanityDocument }) {
     block: {
       normal: ({ children }: any) => <P>{children}</P>,
       h1: ({ children }: any) => <H1>{children}</H1>,
-      h2: ({ children }: any) => <H2>{children}</H2>,
+      h2: ({ children }: any) => <H2 className="mb-8">{children}</H2>,
       h3: ({ children }: any) => <H3>{children}</H3>,
       h4: ({ children }: any) => <H4>{children}</H4>,
     },
@@ -89,10 +89,10 @@ export default function Post({ post }: { post: SanityDocument }) {
           </div>
         ) : null}
         <Image
-          src={builder.image(post.mainImage).width(1920).height(1080).url()}
+          src={builder.image(post.mainImage).width(1024).height(1024).url()}
           className="rounded-lg mb-16 xl:mb-32 border"
-          width={1920}
-          height={1080}
+          width={512}
+          height={512}
           alt={post.mainImage.alt}
           priority
         />
