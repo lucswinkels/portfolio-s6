@@ -32,10 +32,11 @@ export function ProjectPreviewCard({ ...props }) {
         >
           <CardHeader>
             <Image
-              src={builder.image(props.image).width(1920).height(1080).url()}
+              src={builder.image(props.image).width(1000).height(700).url()}
               className="border-b rounded-t-lg"
-              width={1920}
-              height={1080}
+              width={1000}
+              height={700}
+              quality={100}
               alt={props.image.alt}
             />
           </CardHeader>

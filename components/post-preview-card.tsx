@@ -34,11 +34,12 @@ export function PostPreviewCard({ ...props }) {
         >
           <CardHeader>
             <Image
-              src={builder.image(props.image).width(1920).height(1080).url()}
+              src={builder.image(props.image).width(1024).height(1024).url()}
               className="border-b rounded-t-lg"
-              width={1920}
-              height={1080}
+              width={1024}
+              height={1024}
               alt={props.image.alt}
+              quality={100}
             />
           </CardHeader>
           <CardContent className="relative pt-1.5">

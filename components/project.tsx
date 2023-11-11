@@ -13,7 +13,7 @@ import { H1 } from "@/components/typography/h1";
 
 import Posts from "./posts";
 import PreviewPosts from "./preview-posts";
-import { P } from "./typography/p";
+import { Lead } from "./typography/lead";
 import { Button } from "./ui/button";
 
 export default async function Project({
@@ -31,7 +31,7 @@ export default async function Project({
     <div className="lg:flex justify-between mb-8 xl:mb-16">
       <div>
         <H1 className="mb-4">{project.title}</H1>
-        <P>{project.description}</P>
+        <Lead>{project.description}</Lead>
       </div>
       <Button asChild className="mt-4 lg:mt-0">
         <a
