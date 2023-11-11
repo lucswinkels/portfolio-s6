@@ -4,6 +4,8 @@
 
 My portfolio for semester 6 of advanced media design @ FHICT.
 
-Built in [Next.js](https://nextjs.org/)
+Built using [Next.js](https://nextjs.org/) with [shadcn/ui](https://ui.shadcn.com/).
+
+Content written using [Sanity CMS](https://www.sanity.io/).
 
 Live demo available [here](https://semester6.lucswinkels.com)

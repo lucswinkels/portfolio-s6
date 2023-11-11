@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-export function Lead({
+export function Blockquote({
   children,
   className,
 }: {
@@ -10,8 +10,8 @@ export function Lead({
   className?: string;
 }) {
   return (
-    <p className={cn("text-xl text-muted-foreground max-w-[50ch]", className)}>
+    <blockquote className={cn("border-l-2 pl-6 italic", className)}>
       {children}
-    </p>
+    </blockquote>
   );
 }

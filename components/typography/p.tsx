@@ -9,11 +9,5 @@ export function P({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
-    <p
-      className={cn("leading-7 max-w-[600px] text-muted-foreground", className)}
-    >
-      {children}
-    </p>
-  );
+  return <p className={cn("leading-7 max-w-[75ch]", className)}>{children}</p>;
 }
