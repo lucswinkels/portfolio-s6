@@ -52,7 +52,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
-          <div className="py-[calc(5rem+10vh)] lg:py-[calc(6rem+10vh)] xl:py-[calc(6rem+15vh)]">
+          <div className="py-[calc(5rem+10vh)] lg:py-[calc(6rem+10vh)]">
             {children}
           </div>
           <BackToTop />
