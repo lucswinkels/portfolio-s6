@@ -126,7 +126,7 @@ export function Navbar() {
             <Palette className={IconStyles} />
             <p className="dark:text-muted-foreground">Theme</p>
           </div>
-          <ModeToggle />
+          <ModeToggle variant="outline" />
         </div>
       </div>
     );
@@ -162,7 +162,7 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <ModeToggle />
+                <ModeToggle variant="ghost" />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

@@ -3,9 +3,10 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
-import { ExternalLink } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
+import { slugify } from "@/lib/utils";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import PreviewProvider from "@/components/preview-provider";
@@ -14,6 +15,7 @@ import { H1 } from "@/components/typography/h1";
 import Posts from "./posts";
 import PreviewPosts from "./preview-posts";
 import { Lead } from "./typography/lead";
+import { SmallText } from "./typography/small-text";
 import { Button } from "./ui/button";
 
 export default async function Project({
@@ -28,20 +30,29 @@ export default async function Project({
   const isDraftMode = draftMode().isEnabled;
 
   const Content = () => (
-    <div className="lg:flex justify-between mb-8 xl:mb-16">
-      <div>
-        <H1 className="mb-4">{project.title}</H1>
-        <Lead>{project.description}</Lead>
+    <>
+      <div className="md:flex hidden items-center mb-8 text-muted-foreground">
+        <SmallText>
+          <Link href="/">Home</Link>
+        </SmallText>
+        <ChevronRight className="mx-1 h-4 w-4" strokeWidth={2} />
+        <SmallText className="text-foreground">{project.title}</SmallText>
       </div>
-      <Button asChild className="mt-4 lg:mt-0">
-        <a
-          href={`/files/${project.slug.current}/reading-guide.pdf`}
-          target="_blank"
-        >
-          <ExternalLink className="mr-2 h-4 w-4" /> Reading Guide
-        </a>
-      </Button>
-    </div>
+      <div className="lg:flex justify-between mb-8 xl:mb-16">
+        <div>
+          <H1 className="mb-4">{project.title}</H1>
+          <Lead>{project.description}</Lead>
+        </div>
+        <Button asChild className="mt-4 lg:mt-0">
+          <a
+            href={`/files/${project.slug.current}/reading-guide.pdf`}
+            target="_blank"
+          >
+            <ExternalLink className="mr-2 h-4 w-4" /> Reading Guide
+          </a>
+        </Button>
+      </div>
+    </>
   );
 
   if (isDraftMode && token) {
