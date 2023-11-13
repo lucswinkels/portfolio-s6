@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 
-export function Logo() {
+type Props = {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+};
+export function Logo(props: Props) {
   return (
-    <Link href="/" className="h-8 w-8">
+    <Link href="/" className="h-8 w-8" onClick={props.onClick}>
       <svg
         id="logo"
         data-name="logo"
