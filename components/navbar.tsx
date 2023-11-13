@@ -3,8 +3,17 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Menu } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Globe,
+  Home,
+  Menu,
+  Palette,
+  Table,
+  User,
+  Users,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -56,42 +65,70 @@ export function Navbar() {
     );
   };
   const MobileMenu = () => {
+    const IconStyles = "mr-4 h-6 w-6 text-foreground";
     const MobileMenuLinkItems = [
-      { title: "Burden of proof", href: "/burden-of-proof" },
-      { title: "Individual project", href: "/projects/individual-project" },
-      { title: "Group project", href: "/projects/group-project" },
       {
+        icon: <Home className={IconStyles} />,
+        title: "Home",
+        href: "/",
+      },
+      {
+        icon: <Table className={IconStyles} />,
+        title: "Burden of proof",
+        href: "/burden-of-proof",
+      },
+      {
+        icon: <User className={IconStyles} />,
+        title: "Individual project",
+        href: "/projects/individual-project",
+      },
+      {
+        icon: <Users className={IconStyles} />,
+        title: "Group project",
+        href: "/projects/group-project",
+      },
+      {
+        icon: <Globe className={IconStyles} />,
         title: "International project",
         href: "/projects/international-project",
       },
+      {
+        icon: <Github className={IconStyles} />,
+        title: "Source code (GitHub)",
+        href: "https://github.com/lucswinkels/portfolio-s6",
+        external: true,
+      },
     ];
-    const MobileMenuItemStyles = "basis-1/5 w-full px-6 flex items-center";
+    const MobileMenuItemStyles =
+      "h-14 w-full flex items-center border-b text-sm";
     return (
-      <motion.div
-        className={`md:hidden flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] justify-center ${
+      <div
+        className={`md:hidden px-6 flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
       >
         {MobileMenuLinkItems.map((item, i) => (
           <Link
             href={item.href}
             key={i}
-            className={cn(
-              "font-semibold text-md border-b",
-              MobileMenuItemStyles
-            )}
+            className={cn("dark:text-muted-foreground", MobileMenuItemStyles)}
             onClick={handleMenuVisibility}
           >
+            {item.icon}
             {item.title}
+            {item.external && (
+              <ExternalLink className="h-4 w-4 ml-2 dark:text-foreground" />
+            )}
           </Link>
         ))}
-        <div className={cn("", MobileMenuItemStyles)}>
+        <div className={cn("justify-between", MobileMenuItemStyles)}>
+          <div className="flex">
+            <Palette className={IconStyles} />
+            <p className="dark:text-muted-foreground">Theme</p>
+          </div>
           <ModeToggle />
         </div>
-      </motion.div>
+      </div>
     );
   };
   return (
