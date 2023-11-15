@@ -35,7 +35,7 @@ export default async function Project({
         <SmallText>
           <Link href="/">Home</Link>
         </SmallText>
-        <ChevronRight className="mx-1 h-4 w-4" strokeWidth={2} />
+        <ChevronRight className="mx-1 h-4 w-4" />
         <SmallText className="text-foreground">{project.title}</SmallText>
       </div>
       <div className="lg:flex justify-between mb-8 xl:mb-16">
