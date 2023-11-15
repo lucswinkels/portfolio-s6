@@ -10,10 +10,10 @@ import imageUrlBuilder from "@sanity/image-url";
 import { ChevronRight } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
+import NotFoundPage from "@/app/not-found";
 
 import FadeUp from "./animation/fade-up";
 import Container from "./container";
-import NextPreviousPost from "./next-previous-post";
 import { Blockquote } from "./typography/blockquote";
 import { H1 } from "./typography/h1";
 import { H2 } from "./typography/h2";
@@ -60,20 +60,20 @@ export default function Post({ post }: { post: SanityDocument }) {
     },
   };
 
-  return (
+  return post ? (
     <FadeUp>
       <Container>
         <div className="md:flex hidden items-center mb-8 text-muted-foreground">
           <SmallText>
             <Link href="/">Home</Link>
           </SmallText>
-          <ChevronRight className="mx-1 h-4 w-4" strokeWidth={2} />
+          <ChevronRight className="mx-1 h-4 w-4" />
           <SmallText>
             <Link href={`/projects/${slugify(post.project)}`}>
               {post.project}
             </Link>
           </SmallText>
-          <ChevronRight className="mx-1 h-4 w-4" strokeWidth={2} />
+          <ChevronRight className="mx-1 h-4 w-4" />
           <SmallText className="text-foreground">{post.title}</SmallText>
         </div>
         <H1 className="mb-4">{post.title}</H1>
@@ -103,42 +103,12 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post.mainImage.alt}
           priority
         />
-        {/* <div className="lg:flex mb-16 xl:mb-32 items-center gap-16">
-          <Image
-            src={builder.image(post.mainImage).width(1024).height(1024).url()}
-            className="rounded-lg border"
-            quality={100}
-            width={512}
-            height={512}
-            alt={post.mainImage.alt}
-            priority
-          />
-          <div>
-            <H1 className="mb-4">{post.title}</H1>
-            <Lead className="mb-4">{post.description}</Lead>
-            {post.categories || post.researchMethods ? (
-              <div className="flex gap-2 xl:gap-4 flex-wrap">
-                {post.categories &&
-                  post.categories.map((category: any) => (
-                    <Badge variant="secondary" key={category}>
-                      {category}
-                    </Badge>
-                  ))}
-                {post.researchMethods &&
-                  post.researchMethods.map((method: any) => (
-                    <Badge variant="secondary" key={method}>
-                      {method.title}
-                    </Badge>
-                  ))}
-              </div>
-            ) : null}
-          </div>
-        </div> */}
         <div className="prose dark:prose-invert">
           <PortableText value={post.body} components={components} />
         </div>
-        {/* <NextPreviousPost currentPost={post} /> */}
       </Container>
     </FadeUp>
+  ) : (
+    <NotFoundPage />
   );
 }
