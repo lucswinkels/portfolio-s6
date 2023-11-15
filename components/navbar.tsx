@@ -33,18 +33,22 @@ import { Button } from "./ui/button";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-  const projects = [
+  const navItems = [
+    {
+      title: "Burden of proof",
+      href: "/burden-of-proof",
+    },
     {
       title: "Individual project",
       href: "/projects/individual-project",
     },
     {
-      title: "International project",
-      href: "/projects/international-project",
-    },
-    {
       title: "Group project",
       href: "/projects/group-project",
+    },
+    {
+      title: "International project",
+      href: "/projects/international-project",
     },
   ];
   const closeMobileMenu = () => {
@@ -57,7 +61,7 @@ export function Navbar() {
     return (
       <Button
         variant="outline"
-        className="md:hidden flex"
+        className="lg:hidden flex"
         onClick={handleMenuVisibility}
       >
         Menu <Menu className="h-4 w-4 ml-2" strokeWidth={1} />
@@ -103,7 +107,7 @@ export function Navbar() {
       "h-14 w-full flex items-center border-b text-sm";
     return (
       <div
-        className={`md:hidden px-6 flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
+        className={`lg:hidden px-6 md:px-[10%] flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
@@ -139,28 +143,18 @@ export function Navbar() {
           <Logo onClick={closeMobileMenu} />
           <NavigationMenu>
             <MobileMenuToggle />
-            <NavigationMenuList className="md:flex hidden">
-              <NavigationMenuItem>
-                <Link href="/burden-of-proof" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Burden of proof
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-max gap-3 p-4">
-                    {projects.map((project, i) => (
-                      <ListItem
-                        key={i}
-                        title={project.title}
-                        href={project.href}
-                      />
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            <NavigationMenuList className="lg:flex hidden">
+              {navItems.map((item, i) => (
+                <NavigationMenuItem key={i}>
+                  <Link href={item.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {item.title}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
