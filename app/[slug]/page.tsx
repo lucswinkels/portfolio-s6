@@ -12,7 +12,7 @@ import PreviewProvider from "@/components/preview-provider";
 export async function generateMetadata({ params, searchParams }: any) {
   const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
   return {
-    title: post?.title ? post.title : "Title not found!",
+    title: post?.title ? post.title : "Page not found",
   };
 }
 

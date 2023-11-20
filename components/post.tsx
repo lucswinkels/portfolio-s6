@@ -103,7 +103,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose dark:prose-invert">
+        <div className="prose dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
         </div>
       </Container>
