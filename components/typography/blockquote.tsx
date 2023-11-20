@@ -10,7 +10,9 @@ export function Blockquote({
   className?: string;
 }) {
   return (
-    <blockquote className={cn("border-l-2 pl-6 italic", className)}>
+    <blockquote
+      className={cn("border-l-2 pl-6 italic border-border", className)}
+    >
       {children}
     </blockquote>
   );
