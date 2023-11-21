@@ -147,21 +147,38 @@ export function Navbar() {
       <MobileMenu />
       <Container className="border-b fixed top-0 left-0 z-50 bg-background">
         <div className="w-full items-center justify-between flex h-20 lg:h-24">
-          <Logo onClick={closeMobileMenu} />
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem className="flex lg:mr-8">
+                <Logo onClick={closeMobileMenu} />
+              </NavigationMenuItem>
+              <div className="lg:flex items-center hidden gap-8">
+                {navItems.map((item, i) => (
+                  <NavigationMenuItem key={i}>
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors leading-none">
+                        {item.title}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </div>
+            </NavigationMenuList>
+          </NavigationMenu>
           <NavigationMenu>
             <MobileMenuToggle />
             <NavigationMenuList className="lg:flex hidden">
-              {navItems.map((item, i) => (
-                <NavigationMenuItem key={i}>
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      {item.title}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
+              <NavigationMenuItem>
+                <Button variant="ghost" size="icon">
+                  <a
+                    href="https://github.com/lucswinkels/portfolio-s6"
+                    target="_blank"
+                  >
+                    <Github className="h-[1.2rem] w-[1.2rem]" />
+                    <span className="sr-only">GitHub</span>
+                  </a>
+                </Button>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
