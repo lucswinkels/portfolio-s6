@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ExternalLink,
   Github,
@@ -13,6 +14,7 @@ import {
   Table,
   User,
   Users,
+  X,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -61,10 +63,15 @@ export function Navbar() {
     return (
       <Button
         variant="outline"
+        size="icon"
         className="lg:hidden flex"
         onClick={handleMenuVisibility}
       >
-        Menu <Menu className="h-4 w-4 ml-2" strokeWidth={1} />
+        {mobileMenuVisibility ? (
+          <X className="h-5 w-5" />
+        ) : (
+          <Menu className="h-5 w-5" />
+        )}
       </Button>
     );
   };

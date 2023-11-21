@@ -12,7 +12,7 @@ export function H1({
   return (
     <h1
       className={cn(
-        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+        "scroll-m-20 text-4xl lg:font-extrabold font-bold tracking-tight lg:text-5xl",
         className
       )}
     >
