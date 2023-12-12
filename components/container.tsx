@@ -10,12 +10,7 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "w-full px-6 md:px-[10%] xl:px-[15%] 2xl:px-[20%]",
-        className
-      )}
-    >
+    <div className={cn("w-full px-6 md:px-[10%] xl:px-[15%]", className)}>
       {children}
     </div>
   );
