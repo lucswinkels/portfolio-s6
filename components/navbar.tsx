@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  Book,
   ExternalLink,
   Github,
   Globe,
@@ -36,6 +37,10 @@ import { Button } from "./ui/button";
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
   const navItems = [
+    {
+      title: "Reading guide",
+      href: "/reading-guide",
+    },
     {
       title: "Burden of proof",
       href: "/burden-of-proof",
@@ -82,6 +87,11 @@ export function Navbar() {
         icon: <Home className={IconStyles} />,
         title: "Home",
         href: "/",
+      },
+      {
+        icon: <Book className={IconStyles} />,
+        title: "Reading guide",
+        href: "/reading-guide",
       },
       {
         icon: <Table className={IconStyles} />,
@@ -149,10 +159,15 @@ export function Navbar() {
         <div className="w-full items-center justify-between flex h-20 lg:h-24">
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem className="flex lg:mr-8">
+              <NavigationMenuItem className="flex">
                 <Logo onClick={closeMobileMenu} />
               </NavigationMenuItem>
-              <div className="lg:flex items-center hidden gap-8">
+            </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu>
+            <MobileMenuToggle />
+            <NavigationMenuList>
+              <div className="lg:flex items-center hidden gap-6 2xl:gap-8 lg:mr-8">
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
@@ -164,9 +179,6 @@ export function Navbar() {
                 ))}
               </div>
             </NavigationMenuList>
-          </NavigationMenu>
-          <NavigationMenu>
-            <MobileMenuToggle />
             <NavigationMenuList className="lg:flex hidden">
               <NavigationMenuItem>
                 <Button variant="ghost" size="icon">

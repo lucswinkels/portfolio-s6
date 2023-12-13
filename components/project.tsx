@@ -44,12 +44,7 @@ export default async function Project({
           <Lead>{project.description}</Lead>
         </div>
         <Button asChild className="mt-4 lg:mt-0">
-          <a
-            href={`/files/${project.slug.current}/reading-guide.pdf`}
-            target="_blank"
-          >
-            <ExternalLink className="mr-2 h-4 w-4" /> Reading Guide
-          </a>
+          <Link href="/reading-guide">Reading Guide</Link>
         </Button>
       </div>
     </>
