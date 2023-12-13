@@ -25,7 +25,7 @@ export function ProjectPreviewCard({ ...props }) {
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-2 transition-transform rounded-2xl overflow-hidden relative bg-muted-foreground/5"
+          className="group-hover:-translate-y-2 transition-transform relative bg-muted-foreground/5"
         >
           <CardPattern />
           <div className="flex flex-row items-center p-6 justify-between relative z-20">
