@@ -11,7 +11,11 @@ import PreviewProjects from "@/components/preview-projects";
 import PreviewProvider from "@/components/preview-provider";
 import Projects from "@/components/projects";
 import { H1 } from "@/components/typography/h1";
+import { H2 } from "@/components/typography/h2";
+import { H3 } from "@/components/typography/h3";
+import { H4 } from "@/components/typography/h4";
 import { Lead } from "@/components/typography/lead";
+import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
   title: "Home // Portfolio S6",
@@ -23,9 +27,15 @@ export default async function Home() {
   });
   const isDraftMode = draftMode().isEnabled;
   const Content = () => (
-    <div className="mb-8 xl:mb-16">
-      <H1 className="mb-4">Projects</H1>
-      <Lead>All the projects I worked on during this semester.</Lead>
+    <div className="mb-16 xl:mb-24">
+      <H3 className="w-full md:w-[500px] mb-8">
+        I&apos;m Luc, a front-end developer based in The Netherlands.
+      </H3>
+      <P className="w-full md:w-[500px] text-lg">
+        I focus on designing and building modern and detailed websites and apps.
+        This is my portfolio for semester 6 of my IT & Media Design study at the
+        Fontys University of Applied Sciences.
+      </P>
     </div>
   );
   if (isDraftMode && token) {

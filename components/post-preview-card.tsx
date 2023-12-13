@@ -35,7 +35,7 @@ export function PostPreviewCard({ ...props }) {
           <CardHeader>
             <Image
               src={builder.image(props.image).width(1024).height(1024).url()}
-              className="border-b rounded-t-lg"
+              className="border-b rounded-t-2xl"
               width={1024}
               height={1024}
               alt={props.image.alt}

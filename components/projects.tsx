@@ -26,6 +26,7 @@ export default function Projects({
           image={project.mainImage}
           description={project.description}
           href={project.slug.current}
+          year={project.year}
         />
       ))}
     </div>
