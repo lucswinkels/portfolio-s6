@@ -1,17 +1,11 @@
 import * as React from "react";
 import { Metadata } from "next";
-import { draftMode } from "next/headers";
 import Link from "next/link";
-import { postsQuery } from "@/sanity/lib/queries";
-import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { ChevronRight } from "lucide-react";
-import { SanityDocument } from "next-sanity";
 
 import FadeUp from "@/components/animation/fade-up";
+import BurdenOfProof from "@/components/burden-of-proof";
 import Container from "@/components/container";
-import Posts from "@/components/posts";
-import PreviewPosts from "@/components/preview-posts";
-import PreviewProvider from "@/components/preview-provider";
 import { H1 } from "@/components/typography/h1";
 import { Lead } from "@/components/typography/lead";
 import { SmallText } from "@/components/typography/small-text";
@@ -20,12 +14,7 @@ export const metadata: Metadata = {
   title: "Burden of proof",
 };
 
-export default async function BurdenOfProof() {
-  const posts = await sanityFetch<SanityDocument[]>({
-    query: postsQuery,
-  });
-  const isDraftMode = draftMode().isEnabled;
-
+export default function BurdenOfProofPage() {
   const Content = () => (
     <>
       <div className="md:flex hidden items-center mb-8 text-muted-foreground">
@@ -42,23 +31,11 @@ export default async function BurdenOfProof() {
     </>
   );
 
-  if (isDraftMode && token) {
-    return (
-      <Container>
-        <FadeUp>
-          <Content />
-          <PreviewProvider token={token}>
-            <PreviewPosts posts={posts} />
-          </PreviewProvider>
-        </FadeUp>
-      </Container>
-    );
-  }
   return (
     <Container>
       <FadeUp>
         <Content />
-        <Posts posts={posts} />
+        <BurdenOfProof />
       </FadeUp>
     </Container>
   );

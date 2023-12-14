@@ -37,12 +37,12 @@ export const projectPathsQuery = groq`*[_type == "project" && defined(slug.curre
 
 // Get all projects
 export const projectsQuery = groq`*[_type == "project" && defined(slug.current)]{
-    _id, title, slug, description, mainImage
+    _id, title, slug, description, mainImage, year
 }`;
 
 // Get a single project by its slug
 export const projectQuery = groq`*[_type == "project" && slug.current == $slug][0]{ 
-  title, mainImage, body, description, slug
+  title, mainImage, body, description, slug, year
 }`;
 
 // Get previous/next (related) posts
