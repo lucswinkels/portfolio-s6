@@ -278,6 +278,14 @@ export default function ReadingGuide() {
             designs.
           </P>
           <P>
+            Since we were unsure on if we should go for a dark or light theme, I
+            conducted{" "}
+            <Link href="/grip-on-sound-c4-model">
+              research on light vs dark themes
+            </Link>{" "}
+            and which one we should create the primary design with.
+          </P>
+          <P>
             To visualize how the architecture of the application, I designed a{" "}
             <Link href="/grip-on-sound-c4-model">C4 model</Link>.
           </P>

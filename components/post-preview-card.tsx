@@ -30,7 +30,7 @@ export function PostPreviewCard({ ...props }) {
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-2 transition-transform"
+          className="group-hover:-translate-y-2 transition-transform bg-muted-foreground/5"
         >
           <CardHeader>
             <Image
