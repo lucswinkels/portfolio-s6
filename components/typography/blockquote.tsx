@@ -11,7 +11,10 @@ export function Blockquote({
 }) {
   return (
     <blockquote
-      className={cn("border-l-2 pl-6 italic border-border", className)}
+      className={cn(
+        "border-l-2 pl-6 italic border-border max-w-[75ch]",
+        className
+      )}
     >
       {children}
     </blockquote>
