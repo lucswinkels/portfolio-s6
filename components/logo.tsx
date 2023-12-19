@@ -7,7 +7,7 @@ type Props = {
 };
 export function Logo(props: Props) {
   return (
-    <Link href="/" className="h-8 w-8" onClick={props.onClick}>
+    <Link href="/" className="size-8" onClick={props.onClick}>
       <svg
         id="logo"
         data-name="logo"

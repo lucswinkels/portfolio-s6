@@ -82,7 +82,7 @@ export default function Posts({
                   size="icon"
                   onClick={handleResetLearningOutcomes}
                 >
-                  <RotateCcw className="h-4 w-4" />
+                  <RotateCcw className="size-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>

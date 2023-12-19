@@ -99,16 +99,16 @@ export function Navbar() {
         onClick={handleMenuVisibility}
       >
         {mobileMenuVisibility ? (
-          <X className="h-5 w-5" />
+          <X className="size-5" />
         ) : (
-          <Menu className="h-5 w-5" />
+          <Menu className="size-5" />
         )}
       </Button>
     );
   };
 
   const MobileMenu = () => {
-    const IconStyles = "mr-4 h-6 w-6 text-foreground";
+    const IconStyles = "mr-4 size-6 text-foreground";
     const MobileMenuLinkItems = [
       {
         icon: <Home className={IconStyles} />,
@@ -167,7 +167,7 @@ export function Navbar() {
             {item.icon}
             {item.title}
             {item.external && (
-              <ExternalLink className="h-4 w-4 ml-2 dark:text-foreground" />
+              <ExternalLink className="size-4 ml-2 dark:text-foreground" />
             )}
           </Link>
         ))}
@@ -222,7 +222,7 @@ export function Navbar() {
                     href="https://github.com/lucswinkels/portfolio-s6"
                     target="_blank"
                   >
-                    <Github className="h-[1.2rem] w-[1.2rem]" />
+                    <Github className="size-[1.2rem]" />
                     <span className="sr-only">GitHub</span>
                   </a>
                 </Button>
