@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Book,
@@ -36,28 +37,47 @@ import { Button } from "./ui/button";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-  const navItems = [
-    {
-      title: "Reading guide",
-      href: "/reading-guide",
-    },
-    {
-      title: "Burden of proof",
-      href: "/burden-of-proof",
-    },
-    {
-      title: "Individual project",
-      href: "/projects/individual-project",
-    },
-    {
-      title: "Group project",
-      href: "/projects/group-project",
-    },
-    {
-      title: "International project",
-      href: "/projects/international-project",
-    },
-  ];
+  const { pathname } = useRouter();
+  const [activeLink, setActiveLink] = useState(pathname);
+
+  const navItems = React.useMemo(
+    () => [
+      {
+        title: "Reading guide",
+        href: "/reading-guide",
+      },
+      {
+        title: "Burden of proof",
+        href: "/burden-of-proof",
+      },
+      {
+        title: "Individual project",
+        href: "/projects/individual-project",
+      },
+      {
+        title: "Group project",
+        href: "/projects/group-project",
+      },
+      {
+        title: "International project",
+        href: "/projects/international-project",
+      },
+    ],
+    []
+  ); // Memoized array, empty dependency array as it doesn't depend on any external props or state
+
+  React.useEffect(() => {
+    // Check if the current pathname is in the list of navigation items
+    const isCurrentPathInNavItems = navItems.some(
+      (item) => item.href === pathname
+    );
+
+    // Update the active link based on whether the current path is in nav items
+    if (isCurrentPathInNavItems) {
+      setActiveLink(pathname);
+    }
+  }, [pathname, navItems]);
+
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
   };
@@ -171,7 +191,14 @@ export function Navbar() {
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors leading-none">
+                      <NavigationMenuLink
+                        onClick={() => setActiveLink(item.href)}
+                        className={`text-sm font-medium hover:text-foreground transition-colors leading-none pb-1 border-b border-transparent ${
+                          activeLink === item.href
+                            ? "text-foreground border-foreground"
+                            : "text-muted-foreground/80"
+                        }`}
+                      >
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
