@@ -35,7 +35,7 @@ export function ProjectPreviewCard({ ...props }) {
               <span className="font-semibold">{props.title}</span>
             </div>
             <span className="opacity-0 group-hover:opacity-100 font-semibold text-sm hidden 2xl:flex items-center transition-opacity">
-              View project <MoveRight className="h-4 w-4 ml-2" />
+              View project <MoveRight className="size-4 ml-2" />
             </span>
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0 relative z-20">

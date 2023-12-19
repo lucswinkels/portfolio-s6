@@ -29,7 +29,7 @@ export default function ReadingGuide() {
         <SmallText>
           <Link href="/">Home</Link>
         </SmallText>
-        <ChevronRight className="mx-1 h-4 w-4" />
+        <ChevronRight className="mx-1 size-4" />
         <SmallText className="text-foreground">Reading guide</SmallText>
       </div>
       <div className="lg:flex justify-between mb-8 xl:mb-16">
@@ -39,7 +39,7 @@ export default function ReadingGuide() {
         </div>
         <Button asChild className="mt-4 lg:mt-0">
           <a href="/files/reading-guide.pdf" target="_blank">
-            <ExternalLink className="mr-2 h-4 w-4" /> PDF version
+            <ExternalLink className="mr-2 size-4" /> PDF version
           </a>
         </Button>
       </div>

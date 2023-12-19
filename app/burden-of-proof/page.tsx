@@ -21,7 +21,7 @@ export default function BurdenOfProofPage() {
         <SmallText>
           <Link href="/">Home</Link>
         </SmallText>
-        <ChevronRight className="mx-1 h-4 w-4" />
+        <ChevronRight className="mx-1 size-4" />
         <SmallText className="text-foreground">Burden of proof</SmallText>
       </div>
       <div className="mb-8 xl:mb-16">

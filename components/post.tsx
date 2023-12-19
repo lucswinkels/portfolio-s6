@@ -67,13 +67,13 @@ export default function Post({ post }: { post: SanityDocument }) {
           <SmallText>
             <Link href="/">Home</Link>
           </SmallText>
-          <ChevronRight className="mx-1 h-4 w-4" />
+          <ChevronRight className="mx-1 size-4" />
           <SmallText>
             <Link href={`/projects/${slugify(post.project)}`}>
               {post.project}
             </Link>
           </SmallText>
-          <ChevronRight className="mx-1 h-4 w-4" />
+          <ChevronRight className="mx-1 size-4" />
           <SmallText className="text-foreground">{post.title}</SmallText>
         </div>
         <H1 className="mb-4">{post.title}</H1>

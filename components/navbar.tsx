@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import {
   Book,
   ExternalLink,
@@ -21,12 +20,9 @@ import {
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 import Container from "./container";
@@ -36,6 +32,7 @@ import { Button } from "./ui/button";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
+
   const navItems = [
     {
       title: "Reading guide",
@@ -58,12 +55,15 @@ export function Navbar() {
       href: "/projects/international-project",
     },
   ];
+
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
   };
+
   const handleMenuVisibility = () => {
     setMobileMenuVisibility(!mobileMenuVisibility);
   };
+
   const MobileMenuToggle = () => {
     return (
       <Button
@@ -73,15 +73,16 @@ export function Navbar() {
         onClick={handleMenuVisibility}
       >
         {mobileMenuVisibility ? (
-          <X className="h-5 w-5" />
+          <X className="size-5" />
         ) : (
-          <Menu className="h-5 w-5" />
+          <Menu className="size-5" />
         )}
       </Button>
     );
   };
+
   const MobileMenu = () => {
-    const IconStyles = "mr-4 h-6 w-6 text-foreground";
+    const IconStyles = "mr-4 size-6 text-foreground";
     const MobileMenuLinkItems = [
       {
         icon: <Home className={IconStyles} />,
@@ -120,8 +121,10 @@ export function Navbar() {
         external: true,
       },
     ];
+
     const MobileMenuItemStyles =
       "h-14 w-full flex items-center border-b text-sm";
+
     return (
       <div
         className={`lg:hidden px-6 md:px-[10%] font-medium flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
@@ -138,7 +141,7 @@ export function Navbar() {
             {item.icon}
             {item.title}
             {item.external && (
-              <ExternalLink className="h-4 w-4 ml-2 dark:text-foreground" />
+              <ExternalLink className="size-4 ml-2 dark:text-foreground" />
             )}
           </Link>
         ))}
@@ -171,7 +174,7 @@ export function Navbar() {
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors leading-none">
+                      <NavigationMenuLink className="text-sm font-medium hover:text-foreground transition-colors leading-none text-muted-foreground/90">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
@@ -186,7 +189,7 @@ export function Navbar() {
                     href="https://github.com/lucswinkels/portfolio-s6"
                     target="_blank"
                   >
-                    <Github className="h-[1.2rem] w-[1.2rem]" />
+                    <Github className="size-[1.2rem]" />
                     <span className="sr-only">GitHub</span>
                   </a>
                 </Button>
