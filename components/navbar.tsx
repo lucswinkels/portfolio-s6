@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   Book,
   ExternalLink,
@@ -32,55 +31,30 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 
 export function Navbar() {
-  const pathname = usePathname();
-
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-  const [activeLink, setActiveLink] = useState(pathname);
 
-  const navItems = React.useMemo(
-    () => [
-      {
-        title: "Reading guide",
-        href: "/reading-guide",
-      },
-      {
-        title: "Burden of proof",
-        href: "/burden-of-proof",
-      },
-      {
-        title: "Individual project",
-        href: "/projects/individual-project",
-      },
-      {
-        title: "Group project",
-        href: "/projects/group-project",
-      },
-      {
-        title: "International project",
-        href: "/projects/international-project",
-      },
-    ],
-    []
-  );
-
-  const isCurrentPathInNavItems = navItems.some(
-    (item) => item.href === pathname
-  );
-
-  React.useEffect(() => {
-    if (isCurrentPathInNavItems) {
-      setActiveLink(pathname);
-    }
-  }, [pathname, navItems]);
-
-  const handleActiveLink = (href: string) => {
-    if (isCurrentPathInNavItems) {
-      setActiveLink(href);
-    } else {
-      // TODO: Remove active styles from previous activelink element that was in navbar
-      console.log("");
-    }
-  };
+  const navItems = [
+    {
+      title: "Reading guide",
+      href: "/reading-guide",
+    },
+    {
+      title: "Burden of proof",
+      href: "/burden-of-proof",
+    },
+    {
+      title: "Individual project",
+      href: "/projects/individual-project",
+    },
+    {
+      title: "Group project",
+      href: "/projects/group-project",
+    },
+    {
+      title: "International project",
+      href: "/projects/international-project",
+    },
+  ];
 
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
@@ -200,14 +174,7 @@ export function Navbar() {
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink
-                        onClick={() => handleActiveLink(item.href)}
-                        className={`text-sm font-medium hover:text-foreground transition-colors leading-none pb-1 border-b ${
-                          activeLink === item.href
-                            ? "text-foreground border-foreground"
-                            : "text-muted-foreground/80 border-transparent"
-                        }`}
-                      >
+                      <NavigationMenuLink className="text-sm font-medium hover:text-foreground transition-colors leading-none text-muted-foreground/90">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
