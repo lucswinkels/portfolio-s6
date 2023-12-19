@@ -159,7 +159,7 @@ export function Navbar() {
     <>
       <MobileMenu />
       <Container className="border-b fixed top-0 left-0 z-50 bg-background">
-        <div className="w-full items-center justify-between flex h-20 lg:h-24">
+        <div className="w-full items-center justify-between flex h-20">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className="flex">
