@@ -244,6 +244,13 @@ export default function ReadingGuide() {
             questions to form a better concept before moving on to the designs.
           </P>
           <P>
+            To maintain a proper structure during the project, we decided to use
+            the agile working method with SCRUM. We rotated the scrum master
+            role every sprint and held retrospectives during this process. I
+            documented my experience as scrum master during sprint 4{" "}
+            <Link href="/scrum-sprint-retrospectives">here</Link>.
+          </P>
+          <P>
             My research question was “Are there specific in-app features that
             can help teachers to organize PE classes with behavioural changes to
             decrease noise levels?”. To answer this research question, I
@@ -284,6 +291,12 @@ export default function ReadingGuide() {
               research on light vs dark themes
             </Link>{" "}
             and which one we should create the primary design with.
+          </P>
+          <P>
+            During this project, we had 2 moments for{" "}
+            <Link href="/peer-feedback">peer reviews</Link> to assess how we
+            worked in a group, which helped me reflect on how I was able to
+            collaborate in a group context.
           </P>
           <P>
             To visualize how the architecture of the application, I designed a{" "}
