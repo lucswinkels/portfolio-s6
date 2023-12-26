@@ -216,10 +216,11 @@ export default function ReadingGuide() {
             my prototype into a live website, as documented{" "}
             <Link href="/portfolio-development">here</Link>. To help maintain a
             proper structure, I designed a{" "}
-            <Link href="/portfolio-c4-model">C4 model</Link> for this portfolio.
-            Throughout this project I communicated with stakeholders and peers
-            on how to adapt and improve the portfolio, and reflected on what
-            went well or could&apos;ve gone better, which is documented in this{" "}
+            <Link href="/portfolio-software-diagram">software diagram</Link> for
+            this portfolio. Throughout this project I communicated with
+            stakeholders and peers on how to adapt and improve the portfolio,
+            and reflected on what went well or could&apos;ve gone better, which
+            is documented in this{" "}
             <Link href="/individual-project-reflection">reflection</Link>.
           </P>
         </div>
@@ -287,7 +288,7 @@ export default function ReadingGuide() {
           <P>
             Since we were unsure on if we should go for a dark or light theme, I
             conducted{" "}
-            <Link href="/grip-on-sound-c4-model">
+            <Link href="/light-dark-mode-research">
               research on light vs dark themes
             </Link>{" "}
             and which one we should create the primary design with.
@@ -299,8 +300,10 @@ export default function ReadingGuide() {
             collaborate in a group context.
           </P>
           <P>
-            To visualize how the architecture of the application, I designed a{" "}
-            <Link href="/grip-on-sound-c4-model">C4 model</Link>.
+            To visualize how the architecture of the application would look, I
+            designed a{" "}
+            <Link href="/grip-on-sound-software-diagram">software diagram</Link>
+            .
           </P>
           <P>
             These designs were then tested and validated with{" "}
